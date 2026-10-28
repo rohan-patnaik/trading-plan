@@ -26,11 +26,25 @@
   "slippage_pct": 0.005,
   "stt_sell_pct": 0.0015
  },
- "benchmark": {
-  "name": "Shivansh (Fable 5.1, real money, Dhan)",
-  "source": "https://x.com/shivanshco/status/2115064439972249723",
-  "note": "Real trades as posted on X. Net is after charges, as the author reported it."
- },
+ "benchmarks": [
+  {
+   "id": "shivansh",
+   "name": "Shivansh",
+   "sub": "Real money, Fable 5.1",
+   "source": "https://x.com/shivanshco/status/2115064439972249723",
+   "note": "Real trades as posted on X. Net is after charges, as the author reported it.",
+   "start": "2026-10-27"
+  },
+  {
+   "id": "pranjal",
+   "name": "Pranjal",
+   "sub": "Claude, ₹2L, paper in week 1",
+   "source": "https://x.com/pranjalsoni_/status/2115423231343722789",
+   "note": "Nifty weekly option buying via Kite Connect. ₹2L capital, so divide by 2 to compare with our ₹1L. Week 1 (from 29 Oct) is paper orders on live prices; 3 versions (ORB, Supertrend, EMA) side by side. Rules: max 3 trades/day, stop at +₹15k / −₹5k, stop after 2 losses, flat by 15:10.",
+   "capital": 200000,
+   "start": "2026-10-29"
+  }
+ ],
  "days": [
   {
    "date": "2026-10-21",
@@ -55,7 +69,7 @@
      "cum": 1013.41
     }
    },
-   "benchmark": null
+   "benchmarks": {}
   },
   {
    "date": "2026-10-22",
@@ -80,7 +94,7 @@
      "cum": -1571.31
     }
    },
-   "benchmark": null
+   "benchmarks": {}
   },
   {
    "date": "2026-10-23",
@@ -105,7 +119,7 @@
      "cum": 1334.3
     }
    },
-   "benchmark": null
+   "benchmarks": {}
   },
   {
    "date": "2026-10-26",
@@ -130,7 +144,7 @@
      "cum": 2481.71
     }
    },
-   "benchmark": null
+   "benchmarks": {}
   },
   {
    "date": "2026-10-27",
@@ -155,12 +169,14 @@
      "cum": 2885.77
     }
    },
-   "benchmark": {
-    "day": 1,
-    "gross": 5434.0,
-    "net": 4400.0,
-    "trades": 6,
-    "note": "Nifty 0DTE. Started late (broker token bug). One −₹7,546 loss."
+   "benchmarks": {
+    "shivansh": {
+     "day": 1,
+     "gross": 5434.0,
+     "net": 4400.0,
+     "trades": 6,
+     "note": "Nifty 0DTE. Started late (broker token bug). One −₹7,546 loss."
+    }
    }
   },
   {
@@ -186,14 +202,16 @@
      "cum": 1382.0
     }
    },
-   "benchmark": {
-    "day": 2,
-    "gross": 10985.25,
-    "net": 9500.0,
-    "trades": 7,
-    "note": "Sensex 1DTE. Started 11:30 (IP/token error). Big win: 73300 PE 13:23–13:25."
+   "benchmarks": {
+    "shivansh": {
+     "day": 2,
+     "gross": 10985.25,
+     "net": 9500.0,
+     "trades": 7,
+     "note": "Sensex 1DTE. Started 11:30 (IP/token error). Big win: 73300 PE 13:23–13:25."
+    }
    }
   }
  ],
- "updated": "2026-10-28T16:31+05:30"
+ "updated": "2026-10-28T22:28+05:30"
 }

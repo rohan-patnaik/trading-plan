@@ -37,6 +37,7 @@ table.board{border-collapse:separate;border-spacing:0;min-width:100%}
 .board thead th.sel{background:var(--ink);color:#fff}
 .board thead th.sel small{color:#C9D4DE}
 .board tbody th{position:sticky;left:0;z-index:1;background:var(--card);text-align:left;font:700 .9375rem var(--display);border-right:1.5px solid var(--ink)}
+.board tbody th a{color:inherit;text-decoration-thickness:1px;text-underline-offset:2px}
 .board tbody th span{display:block;font:400 .75rem var(--body);color:var(--ink-soft)}
 .board tr.bench th,.board tr.bench td{border-top:1.5px dashed var(--ink)}
 .board tr.bench th,.board tr.bench td.g-none,.board tr.bench td.total{background:#F6F8FA}
@@ -89,7 +90,7 @@ footer{margin-top:3rem;font-size:.8125rem;color:var(--ink-soft);max-width:70ch}
 <div class="wrap">
 <header>
   <h1>Paper trading log</h1>
-  <p>Three rule-based option-buying strategies, each with its own ₹1L paper account, replayed every evening on that day's real 1-minute Nifty and Sensex prices. The bottom row is Shivansh's real-money results with Fable 5.1, so we can compare day by day.</p>
+  <p>Three rule-based option-buying strategies, each with its own ₹1L paper account, replayed every evening on that day's real 1-minute Nifty and Sensex prices. Below them are two people running similar AI experiments in public: Shivansh with real money on Fable 5.1, and Pranjal with Claude on ₹2L, paper-trading in his first week.</p>
   <p class="updated" id="updated">Loading…</p>
 </header>
 
@@ -100,7 +101,7 @@ footer{margin-top:3rem;font-size:.8125rem;color:var(--ink-soft);max-width:70ch}
     <li class="l-vg">Very good: +5% or more</li><li class="l-g">Good: +1% to +5%</li>
     <li class="l-a">Average: −1% to +1%</li><li class="l-b">Bad: −1% to −3%</li><li class="l-vb">Very bad: −3% or worse</li>
   </ul>
-  <p class="updated">Net after estimated charges. Days before 27 Oct are a warm-up, outside the comparison. Tap a day to see its trades.</p>
+  <p class="updated">Net after estimated charges. Days before 27 Oct are a warm-up, outside the comparison. Pranjal trades ₹2L, so his grade is worked out on half his P&L to compare fairly. Tap a day to see its trades.</p>
 </section>
 
 <section class="day" id="day" aria-live="polite"></section>
@@ -162,7 +163,8 @@ function renderBoard(){
   let head = "<thead><tr><th scope='col' style='text-align:left'>Account</th>";
   for (const d of S.days){
     const warm = d.date < COMPARE_FROM;
-    const label = d.benchmark ? "Day " + d.benchmark.day : warm ? "Warm-up" : "Day " + (S.days.filter(x => x.date >= COMPARE_FROM && x.date <= d.date).length);
+    const sh = d.benchmarks.shivansh;
+    const label = sh ? "Day " + sh.day : warm ? "Warm-up" : "Day " + (S.days.filter(x => x.date >= COMPARE_FROM && x.date <= d.date).length);
     head += `<th scope="col" data-date="${d.date}" tabindex="0" class="${warm ? "warm" : ""}">${label}<small>${fmtDate(d.date)} · ${d.instrument === "NIFTY" ? "Nifty" : "Sensex"}</small></th>`;
   }
   head += "<th scope='col'>Total from Day 1</th></tr></thead>";
@@ -178,15 +180,19 @@ function renderBoard(){
     }
     body += `<td class="total ${tot >= 0 ? "pos" : "neg"}">${inr(tot)}</td></tr>`;
   }
-  let btot = 0;
-  body += `<tr class="bench"><th scope="row">Shivansh<span>Real money, Fable 5.1</span></th>`;
-  for (const d of S.days){
-    const b = d.benchmark;
-    if (b){ btot += b.net; const g = gradeOf(b.net, cap);
-      body += `<td class="cell ${cls(g)}" data-date="${d.date}">${inr(b.net)}<em>${g}</em></td>`; }
-    else body += `<td class="cell g-none" data-date="${d.date}">${d.date < COMPARE_FROM ? "–" : "not posted"}</td>`;
+  for (const [i, bm] of S.benchmarks.entries()){
+    let btot = 0;
+    const scale = cap / (bm.capital || cap);
+    body += `<tr class="${i === 0 ? "bench" : ""}"><th scope="row"><a href="${bm.source}">${bm.name}</a><span>${bm.sub}</span></th>`;
+    for (const d of S.days){
+      const b = d.benchmarks[bm.id];
+      if (b){ btot += b.net; const g = gradeOf(b.net * scale, cap);
+        body += `<td class="cell ${cls(g)}" data-date="${d.date}">${inr(b.net)}<em>${g}</em></td>`; }
+      else body += `<td class="cell g-none" data-date="${d.date}">${d.date < (bm.start || COMPARE_FROM) ? "–" : "not posted"}</td>`;
+    }
+    body += `<td class="total ${btot >= 0 ? "pos" : "neg"}">${Object.keys(S.days.at(-1).benchmarks).length || btot ? inr(btot) : "–"}</td></tr>`;
   }
-  body += `<td class="total ${btot >= 0 ? "pos" : "neg"}">${inr(btot)}</td></tr></tbody>`;
+  body += "</tbody>";
   t.innerHTML = head + body;
   t.querySelectorAll("[data-date]").forEach(n => {
     n.addEventListener("click", () => selectDay(n.dataset.date));
@@ -200,12 +206,13 @@ async function selectDay(date){
   const d = await (await fetch(`data/days/${date}.json`, {cache:"no-store"})).json();
   const box = document.getElementById("day");
   const s0 = d.strategies[0];
-  const bench = S.days.find(x => x.date === date)?.benchmark;
+  const benches = S.days.find(x => x.date === date)?.benchmarks || {};
   box.innerHTML = `<div class="day-head"><h2>${new Date(date + "T00:00:00").toLocaleDateString("en-IN", {weekday:"long", day:"numeric", month:"long"})}</h2>
     <span class="facts">${d.instrument === "NIFTY" ? "Nifty 50" : "Sensex"} · expiry ${fmtDate(s0.expiry)} (${s0.dte === 0 ? "expiry day" : s0.dte + " trading day" + (s0.dte > 1 ? "s" : "") + " to expiry"}) · India VIX ${s0.open_vix?.toFixed(1) ?? "–"} at 9:30</span></div>
     <div class="keys">${ORDER.map(k => `<span><b style="background:${COLORS[k]}"></b>${SHORT[k]}</span>`).join("")}<span>▲ entry · ● exit</span></div>`;
   box.appendChild(chart(d));
-  if (bench) box.appendChild(el("p", {className:"facts"}, `Shivansh that day: ${inr(bench.gross)} gross, ${inr(bench.net)} net from ${bench.trades} trades. ${bench.note}`));
+  for (const bm of S.benchmarks){ const b = benches[bm.id]; if (b)
+    box.appendChild(el("p", {className:"facts"}, `${bm.name} that day: ${b.gross != null ? inr(b.gross) + " gross, " : ""}${inr(b.net)} net from ${b.trades} trades. ${b.note}`)); }
   for (const s of d.strategies){
     const sec = el("div", {className:"strat"});
     sec.innerHTML = `<div class="strat-head"><h3 style="color:${COLORS[s.strategy]}">${SHORT[s.strategy]}</h3>

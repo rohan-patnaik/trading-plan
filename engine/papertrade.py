@@ -379,9 +379,9 @@ def build_summary():
             cum[s["strategy"]] += s["net"]
             row["strategies"][s["strategy"]] = {"net": s["net"], "grade": s["grade"], "trades": len(s["trades"]),
                                                 "cum": round(cum[s["strategy"]], 2)}
-        row["benchmark"] = bench["days"].get(d["date"])
+        row["benchmarks"] = {b["id"]: b["days"][d["date"]] for b in bench["benchmarks"] if d["date"] in b["days"]}
         days.append(row)
-    summary = {"capital": CAPITAL, "strategies": STRATEGIES, "rules": RULES, "benchmark": bench["meta"],
+    summary = {"capital": CAPITAL, "strategies": STRATEGIES, "rules": RULES, "benchmarks": [{k: v for k, v in b.items() if k != "days"} for b in bench["benchmarks"]],
                "days": days, "updated": dt.datetime.now(IST).isoformat(timespec="minutes")}
     (ROOT / "data" / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1))
 
