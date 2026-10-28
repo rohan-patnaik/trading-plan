@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper trading log: Nifty &amp; Sensex options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Schibsted+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF2F4; --grid:#DCE3E8; --ink:#16263A; --ink-soft:#4C5D70;
+  --gain:#1F7A5A; --gain-bg:#D6EBE2; --loss:#B2362F; --loss-bg:#F3DAD7;
+  --rule:#D99A1E; --rule-bg:#F7E7C4; --card:#FFFFFF; --line:#C5D0D8;
+  --display:"Schibsted Grotesk",system-ui,sans-serif; --body:"Atkinson Hyperlegible",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--paper);color:var(--ink)}
+body{margin:0;font:400 1rem/1.55 var(--body);font-variant-numeric:tabular-nums;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;background-position:-1px -1px}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--rule);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:2rem 1.25rem 4rem}
+header h1{font:800 clamp(2rem,5vw,3.25rem)/1.05 var(--display);letter-spacing:-.02em;margin:0 0 .75rem}
+header p{max-width:62ch;margin:0 0 .5rem;color:var(--ink-soft)}
+.updated{font-size:.875rem;color:var(--ink-soft)}
+h2{font:700 1.375rem/1.2 var(--display);margin:2.75rem 0 .75rem}
+h3{font:700 1.0625rem/1.3 var(--display);margin:1.5rem 0 .5rem}
+
+/* the scorecard is the one bold element */
+.board-scroll{overflow-x:auto;background:var(--card);border:1.5px solid var(--ink);border-radius:6px}
+table.board{border-collapse:separate;border-spacing:0;min-width:100%}
+.board th,.board td{padding:.55rem .6rem;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+.board thead th{font:700 .8125rem/1.2 var(--display);color:var(--ink-soft);vertical-align:bottom;cursor:pointer;background:var(--card)}
+.board thead th small{display:block;font:400 .75rem var(--body);color:var(--ink-soft)}
+.board thead th.sel{background:var(--ink);color:#fff}
+.board thead th.sel small{color:#C9D4DE}
+.board tbody th{position:sticky;left:0;z-index:1;background:var(--card);text-align:left;font:700 .9375rem var(--display);border-right:1.5px solid var(--ink)}
+.board tbody th span{display:block;font:400 .75rem var(--body);color:var(--ink-soft)}
+.board tr.bench th,.board tr.bench td{border-top:1.5px dashed var(--ink)}
+.board tr.bench th,.board tr.bench td.g-none,.board tr.bench td.total{background:#F6F8FA}
+.board td.cell{font-weight:700;cursor:pointer;min-width:5.5rem}
+.board td.cell em{display:block;font-style:normal;font-weight:400;font-size:.75rem}
+.g-very-good{background:var(--gain);color:#fff}
+.g-good{background:var(--gain-bg);color:var(--gain)}
+.g-average{background:#fff;color:var(--ink-soft)}
+.g-bad{background:var(--loss-bg);color:var(--loss)}
+.g-very-bad{background:var(--loss);color:#fff}
+.g-none{color:#9AA8B4;font-weight:400}
+.board td.total{border-left:1.5px solid var(--ink);font-weight:700}
+.board .warm{color:#9AA8B4}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin:.75rem 0 0;padding:0;list-style:none;font-size:.8125rem;color:var(--ink-soft)}
+.legend li::before{content:"";display:inline-block;width:.8rem;height:.8rem;border-radius:2px;margin-right:.35rem;vertical-align:-1px;border:1px solid var(--line)}
+.legend .l-vg::before{background:var(--gain)} .legend .l-g::before{background:var(--gain-bg)}
+.legend .l-a::before{background:#fff} .legend .l-b::before{background:var(--loss-bg)} .legend .l-vb::before{background:var(--loss)}
+
+.day{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.25rem}
+.day-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem;align-items:baseline}
+.day-head h2{margin:0}
+.facts{color:var(--ink-soft);font-size:.9375rem}
+svg.chart{width:100%;height:auto;display:block;margin:1rem 0 .25rem}
+.chart .axis{fill:var(--ink-soft);font:12px var(--body)}
+.keys{display:flex;flex-wrap:wrap;gap:.25rem 1rem;font-size:.8125rem;color:var(--ink-soft);margin:0 0 .5rem}
+.keys b{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.3rem;vertical-align:-1px}
+.strat{border-top:1px solid var(--line);padding-top:.25rem}
+.strat-head{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
+.pill{display:inline-block;padding:.1rem .55rem;border-radius:999px;font-size:.8125rem;font-weight:700}
+.trades{width:100%;border-collapse:collapse;font-size:.875rem}
+.trades th{font:700 .75rem var(--display);color:var(--ink-soft);text-align:right;padding:.35rem .4rem;border-bottom:1px solid var(--line)}
+.trades td{text-align:right;padding:.35rem .4rem;border-bottom:1px solid #EDF1F4}
+.trades th:first-child,.trades td:first-child{text-align:left}
+.tscroll{overflow-x:auto}
+.pos{color:var(--gain);font-weight:700} .neg{color:var(--loss);font-weight:700}
+.rules-hit{margin:.5rem 0 0;padding:0;list-style:none}
+.rules-hit li{background:var(--rule-bg);border-left:4px solid var(--rule);padding:.35rem .6rem;margin:.3rem 0;font-size:.875rem}
+.empty{color:var(--ink-soft);font-size:.9375rem;margin:.5rem 0}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.box{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1rem 1.25rem}
+.box ul{margin:.25rem 0;padding-left:1.1rem}
+.box li{margin:.25rem 0}
+.box p{margin:.5rem 0}
+footer{margin-top:3rem;font-size:.8125rem;color:var(--ink-soft);max-width:70ch}
+@media (prefers-reduced-motion:no-preference){.day{animation:in .25s ease-out}@keyframes in{from{opacity:.4}to{opacity:1}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Paper trading log</h1>
+  <p>Three rule-based option-buying strategies, each with its own ₹1L paper account, replayed every evening on that day's real 1-minute Nifty and Sensex prices. The bottom row is Shivansh's real-money results with Fable 5.1, so we can compare day by day.</p>
+  <p class="updated" id="updated">Loading…</p>
+</header>
+
+<section aria-labelledby="board-h">
+  <h2 id="board-h">Day by day</h2>
+  <div class="board-scroll"><table class="board" id="board"></table></div>
+  <ul class="legend">
+    <li class="l-vg">Very good: +5% or more</li><li class="l-g">Good: +1% to +5%</li>
+    <li class="l-a">Average: −1% to +1%</li><li class="l-b">Bad: −1% to −3%</li><li class="l-vb">Very bad: −3% or worse</li>
+  </ul>
+  <p class="updated">Net after estimated charges. Days before 27 Oct are a warm-up, outside the comparison. Tap a day to see its trades.</p>
+</section>
+
+<section class="day" id="day" aria-live="polite"></section>
+
+<section aria-labelledby="rules-h">
+  <h2 id="rules-h">Rules every strategy follows</h2>
+  <div class="cols">
+    <div class="box"><h3>Size and risk</h3><ul id="r-size"></ul></div>
+    <div class="box"><h3>Daily limits</h3><ul id="r-day"></ul></div>
+    <div class="box"><h3>Time and market</h3><ul id="r-time"></ul></div>
+  </div>
+  <h2>The three strategies</h2>
+  <div class="cols">
+    <div class="box"><h3>Opening range breakout</h3><p>Marks the high and low of 9:15–9:30. Buys an ATM call when a 1-minute candle closes above the high, or a put when it closes below the low. Closest to what Shivansh's Fable ran.</p></div>
+    <div class="box"><h3>EMA trend cross</h3><p>On 5-minute candles, buys a call when the 9 EMA crosses above the 21 EMA and price is above the day's open, or a put on the opposite cross.</p></div>
+    <div class="box"><h3>Afternoon range break</h3><p>Marks the 12:30–13:00 range and trades its break after 13:00, when expiry-day moves tend to speed up. Shivansh's best Day 2 trade was exactly this kind of break, at 13:23.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="how-h">
+  <h2 id="how-h">How to read this honestly</h2>
+  <div class="cols">
+    <div class="box"><p><b>These are simulated fills.</b> Option prices come from a pricing model using India VIX, not real option quotes. Spot checks against real fills from 28 Oct came within a few percent, but expiry-day prices can differ by more.</p></div>
+    <div class="box"><p><b>No hindsight.</b> The replay reads one minute at a time and acts on the next minute's open, so a strategy can't see the future. Rule changes apply only from the next day and are listed in the changelog.</p></div>
+    <div class="box"><p><b>Charges are on the high side.</b> Zerodha brokerage, STT at 0.15% on sells, exchange fees, GST and stamp duty, plus 0.5% slippage on every fill.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>Not investment advice. No real orders are placed. Data from Yahoo Finance (1-minute Nifty 50, Sensex and India VIX). Benchmark: <a href="https://x.com/shivanshco/status/2115064439972249723">Shivansh's thread on X</a>. Code and daily data: <a href="https://github.com/rohan-patnaik/trading-plan">github.com/rohan-patnaik/trading-plan</a>.</p>
+</footer>
+</div>
+
+<script>
+const ORDER = ["orb","ema","pm"];
+const COLORS = {orb:"#2F5D9A", ema:"#7A4FA0", pm:"#C0711B"};
+const SHORT = {orb:"Opening range", ema:"EMA trend", pm:"Afternoon break"};
+const COMPARE_FROM = "2026-10-27";
+const inr = (n, sign=true) => (n == null ? "–" : (sign && n > 0 ? "+" : n < 0 ? "−" : "") + "₹" + Math.abs(Math.round(n)).toLocaleString("en-IN"));
+const gradeOf = (n, cap) => { const p = n / cap * 100; return p >= 5 ? "very good" : p >= 1 ? "good" : p > -1 ? "average" : p > -3 ? "bad" : "very bad"; };
+const cls = g => "g-" + g.replace(" ", "-");
+const fmtDate = iso => new Date(iso + "T00:00:00").toLocaleDateString("en-IN", {weekday:"short", day:"numeric", month:"short"});
+const el = (tag, attrs={}, html="") => Object.assign(document.createElement(tag), attrs, html ? {innerHTML: html} : {});
+
+let S, selected;
+
+async function load(){
+  S = await (await fetch("data/summary.json", {cache:"no-store"})).json();
+  document.getElementById("updated").textContent = "Last updated " + new Date(S.updated).toLocaleString("en-IN", {dateStyle:"medium", timeStyle:"short"}) + " IST";
+  renderRules();
+  renderBoard();
+  const last = S.days[S.days.length - 1];
+  if (last) selectDay(last.date);
+}
+
+function renderBoard(){
+  const t = document.getElementById("board");
+  const cap = S.capital;
+  let head = "<thead><tr><th scope='col' style='text-align:left'>Account</th>";
+  for (const d of S.days){
+    const warm = d.date < COMPARE_FROM;
+    const label = d.benchmark ? "Day " + d.benchmark.day : warm ? "Warm-up" : "Day " + (S.days.filter(x => x.date >= COMPARE_FROM && x.date <= d.date).length);
+    head += `<th scope="col" data-date="${d.date}" tabindex="0" class="${warm ? "warm" : ""}">${label}<small>${fmtDate(d.date)} · ${d.instrument === "NIFTY" ? "Nifty" : "Sensex"}</small></th>`;
+  }
+  head += "<th scope='col'>Total from Day 1</th></tr></thead>";
+  let body = "<tbody>";
+  for (const k of ORDER){
+    let tot = 0;
+    body += `<tr><th scope="row">${SHORT[k]}<span>Paper, ₹1L</span></th>`;
+    for (const d of S.days){
+      const s = d.strategies[k];
+      if (d.date >= COMPARE_FROM) tot += s.net;
+      body += s.trades ? `<td class="cell ${cls(s.grade)}" data-date="${d.date}" title="${s.trades} trades">${inr(s.net)}<em>${s.grade}</em></td>`
+                       : `<td class="cell g-none" data-date="${d.date}">no trades</td>`;
+    }
+    body += `<td class="total ${tot >= 0 ? "pos" : "neg"}">${inr(tot)}</td></tr>`;
+  }
+  let btot = 0;
+  body += `<tr class="bench"><th scope="row">Shivansh<span>Real money, Fable 5.1</span></th>`;
+  for (const d of S.days){
+    const b = d.benchmark;
+    if (b){ btot += b.net; const g = gradeOf(b.net, cap);
+      body += `<td class="cell ${cls(g)}" data-date="${d.date}">${inr(b.net)}<em>${g}</em></td>`; }
+    else body += `<td class="cell g-none" data-date="${d.date}">${d.date < COMPARE_FROM ? "–" : "not posted"}</td>`;
+  }
+  body += `<td class="total ${btot >= 0 ? "pos" : "neg"}">${inr(btot)}</td></tr></tbody>`;
+  t.innerHTML = head + body;
+  t.querySelectorAll("[data-date]").forEach(n => {
+    n.addEventListener("click", () => selectDay(n.dataset.date));
+    n.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectDay(n.dataset.date); } });
+  });
+}
+
+async function selectDay(date){
+  selected = date;
+  document.querySelectorAll(".board thead th[data-date]").forEach(th => th.classList.toggle("sel", th.dataset.date === date));
+  const d = await (await fetch(`data/days/${date}.json`, {cache:"no-store"})).json();
+  const box = document.getElementById("day");
+  const s0 = d.strategies[0];
+  const bench = S.days.find(x => x.date === date)?.benchmark;
+  box.innerHTML = `<div class="day-head"><h2>${new Date(date + "T00:00:00").toLocaleDateString("en-IN", {weekday:"long", day:"numeric", month:"long"})}</h2>
+    <span class="facts">${d.instrument === "NIFTY" ? "Nifty 50" : "Sensex"} · expiry ${fmtDate(s0.expiry)} (${s0.dte === 0 ? "expiry day" : s0.dte + " trading day" + (s0.dte > 1 ? "s" : "") + " to expiry"}) · India VIX ${s0.open_vix?.toFixed(1) ?? "–"} at 9:30</span></div>
+    <div class="keys">${ORDER.map(k => `<span><b style="background:${COLORS[k]}"></b>${SHORT[k]}</span>`).join("")}<span>▲ entry · ● exit</span></div>`;
+  box.appendChild(chart(d));
+  if (bench) box.appendChild(el("p", {className:"facts"}, `Shivansh that day: ${inr(bench.gross)} gross, ${inr(bench.net)} net from ${bench.trades} trades. ${bench.note}`));
+  for (const s of d.strategies){
+    const sec = el("div", {className:"strat"});
+    sec.innerHTML = `<div class="strat-head"><h3 style="color:${COLORS[s.strategy]}">${SHORT[s.strategy]}</h3>
+      <span><span class="pill ${cls(s.grade)}">${s.grade}</span> <b class="${s.net >= 0 ? "pos" : "neg"}">${inr(s.net)}</b> net · ${inr(s.gross)} gross · ${inr(s.charges, false)} charges · ${s.orders} orders</span></div>`;
+    if (s.trades.length){
+      sec.innerHTML += `<div class="tscroll"><table class="trades"><thead><tr><th>Option</th><th>In</th><th>Out</th><th>Qty</th><th>Buy</th><th>Sell</th><th>Stop / target</th><th>Exit reason</th><th>Net</th></tr></thead><tbody>${
+        s.trades.map(t => `<tr><td>${t.strike} ${t.kind}</td><td>${t.entry_t}</td><td>${t.exit_t}</td><td>${t.qty}</td><td>${t.entry.toFixed(2)}</td><td>${t.exit.toFixed(2)}</td><td>${t.sl.toFixed(1)} / ${t.target.toFixed(1)}</td><td>${t.why}</td><td class="${t.net >= 0 ? "pos" : "neg"}">${inr(t.net)}</td></tr>`).join("")
+      }</tbody></table></div>`;
+    } else sec.innerHTML += `<p class="empty">No trades. The setup never triggered within the rules.</p>`;
+    if (s.events.length) sec.innerHTML += `<ul class="rules-hit">${s.events.map(e => `<li>${e.t} · ${e.rule}</li>`).join("")}</ul>`;
+    box.appendChild(sec);
+  }
+}
+
+function chart(d){
+  const W = 1000, H = 280, P = {l:56, r:12, t:12, b:28};
+  const pts = d.spot, n = pts.length;
+  const lo = Math.min(...pts.map(p => p.c)), hi = Math.max(...pts.map(p => p.c)), pad = (hi - lo) * .08 || 1;
+  const y0 = lo - pad, y1 = hi + pad;
+  const idx = Object.fromEntries(pts.map((p, i) => [p.t, i]));
+  const X = i => P.l + i / (n - 1) * (W - P.l - P.r);
+  const Y = v => P.t + (y1 - v) / (y1 - y0) * (H - P.t - P.b);
+  let svg = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${d.instrument} 1-minute price with strategy entries and exits">`;
+  for (let k = 0; k <= 4; k++){ const v = y0 + (y1 - y0) * k / 4;
+    svg += `<line x1="${P.l}" x2="${W - P.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="#E3E9EE"/><text class="axis" x="${P.l - 6}" y="${Y(v) + 4}" text-anchor="end">${Math.round(v).toLocaleString("en-IN")}</text>`; }
+  for (const t of ["09:15","10:30","11:30","12:30","13:30","14:30","15:29"]) if (idx[t] != null)
+    svg += `<text class="axis" x="${X(idx[t])}" y="${H - 8}" text-anchor="middle">${t === "15:29" ? "15:30" : t}</text>`;
+  svg += `<polyline fill="none" stroke="#16263A" stroke-width="1.6" points="${pts.map((p, i) => X(i).toFixed(1) + "," + Y(p.c).toFixed(1)).join(" ")}"/>`;
+  for (const s of d.strategies) for (const t of s.trades){
+    const a = idx[t.entry_t], b = idx[t.exit_t], c = COLORS[s.strategy];
+    if (a == null || b == null) continue;
+    svg += `<line x1="${X(a)}" y1="${Y(pts[a].c)}" x2="${X(b)}" y2="${Y(pts[b].c)}" stroke="${c}" stroke-width="2" stroke-dasharray="4 3"/>`;
+    svg += `<path d="M${X(a)} ${Y(pts[a].c) - 9} l6 10 h-12z" fill="${c}"><title>${SHORT[s.strategy]} buys ${t.strike} ${t.kind} at ${t.entry_t}</title></path>`;
+    svg += `<circle cx="${X(b)}" cy="${Y(pts[b].c)}" r="5" fill="${t.net >= 0 ? "#1F7A5A" : "#B2362F"}" stroke="${c}" stroke-width="2"><title>${t.why} at ${t.exit_t}: ${inr(t.net)}</title></circle>`;
+  }
+  return el("div", {}, svg + "</svg>");
+}
+
+function renderRules(){
+  const R = S.rules;
+  const li = a => a.map(x => `<li>${x}</li>`).join("");
+  document.getElementById("r-size").innerHTML = li([
+    `A trade that hits its stop-loss loses at most ${inr(R.max_risk_per_trade, false)}`,
+    `Stop-loss ${Math.round(R.sl_pct * 100)}% of the premium, tighter when one lot costs more. Skip the trade if it would need a stop under ${Math.round(R.min_sl_pct * 100)}%`,
+    `Target is ${R.target_r}× the stop distance. Once up 1×, a trailing stop locks in at least half of that`,
+    `At most ${inr(R.max_premium_per_position, false)} in one position, and half that once the day is up ${inr(R.profit_lock_at, false)}`,
+    `${Math.round(R.slippage_pct * 1000) / 10}% slippage on every fill`]);
+  document.getElementById("r-day").innerHTML = li([
+    `At most ${R.max_orders_per_day} orders a day (an entry and an exit count as 2)`,
+    `Stop for the day at ${inr(R.daily_loss_stop)}, or after ${R.max_consecutive_sl} stop-losses in a row`,
+    `Stop for the day at ${inr(R.daily_profit_stop)}`,
+    `Kill switch: an account down ${inr(-R.kill_switch_drawdown, false)} in total stops trading`]);
+  document.getElementById("r-time").innerHTML = li([
+    `No entries before ${R.no_entry_before}`,
+    `Last entry ${R.last_entry_expiry} on expiry day, ${R.last_entry_other} on other days. All positions closed by ${R.flat_by}`,
+    `No trading if India VIX is below ${R.vix_min} or above ${R.vix_max} at 9:30`,
+    `Nifty (Tuesday expiry) on Mon, Tue and Fri. Sensex (Thursday expiry) on Wed and Thu`]);
+}
+
+load().catch(err => { document.getElementById("updated").textContent = "Couldn't load the trading data (" + err.message + "). Refresh the page to try again."; });
+</script>
+</body>
+</html>

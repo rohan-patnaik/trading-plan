@@ -1,0 +1,174 @@
+{
+ "capital": 100000,
+ "strategies": {
+  "orb": "Opening range breakout (15 min)",
+  "ema": "5-min EMA 9/21 trend cross",
+  "pm": "Afternoon range break (13:00)"
+ },
+ "rules": {
+  "max_premium_per_position": 30000,
+  "max_risk_per_trade": 1500,
+  "max_orders_per_day": 10,
+  "daily_loss_stop": -3000,
+  "max_consecutive_sl": 2,
+  "profit_lock_at": 5000,
+  "daily_profit_stop": 10000,
+  "no_entry_before": "09:30",
+  "last_entry_expiry": "14:45",
+  "last_entry_other": "15:00",
+  "flat_by": "15:10",
+  "vix_min": 11.0,
+  "vix_max": 22.0,
+  "kill_switch_drawdown": -20000,
+  "sl_pct": 0.2,
+  "min_sl_pct": 0.1,
+  "target_r": 2,
+  "slippage_pct": 0.005,
+  "stt_sell_pct": 0.0015
+ },
+ "benchmark": {
+  "name": "Shivansh (Fable 5.1, real money, Dhan)",
+  "source": "https://x.com/shivanshco/status/2115064439972249723",
+  "note": "Real trades as posted on X. Net is after charges, as the author reported it."
+ },
+ "days": [
+  {
+   "date": "2026-10-22",
+   "instrument": "SENSEX",
+   "strategies": {
+    "orb": {
+     "net": 5402.03,
+     "grade": "very good",
+     "trades": 5,
+     "cum": 5402.03
+    },
+    "ema": {
+     "net": -2403.89,
+     "grade": "bad",
+     "trades": 2,
+     "cum": -2403.89
+    },
+    "pm": {
+     "net": -2584.72,
+     "grade": "bad",
+     "trades": 2,
+     "cum": -2584.72
+    }
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2026-10-23",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": -355.69,
+     "grade": "average",
+     "trades": 2,
+     "cum": 5046.34
+    },
+    "ema": {
+     "net": 0.0,
+     "grade": "average",
+     "trades": 0,
+     "cum": -2403.89
+    },
+    "pm": {
+     "net": 2905.61,
+     "grade": "good",
+     "trades": 1,
+     "cum": 320.89
+    }
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2026-10-26",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": 2910.91,
+     "grade": "good",
+     "trades": 1,
+     "cum": 7957.25
+    },
+    "ema": {
+     "net": -1555.9,
+     "grade": "bad",
+     "trades": 1,
+     "cum": -3959.79
+    },
+    "pm": {
+     "net": 1147.41,
+     "grade": "good",
+     "trades": 1,
+     "cum": 1468.3
+    }
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2026-10-27",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": -2475.2,
+     "grade": "bad",
+     "trades": 2,
+     "cum": 5482.05
+    },
+    "ema": {
+     "net": 0.0,
+     "grade": "average",
+     "trades": 0,
+     "cum": -3959.79
+    },
+    "pm": {
+     "net": 404.06,
+     "grade": "average",
+     "trades": 1,
+     "cum": 1872.36
+    }
+   },
+   "benchmark": {
+    "day": 1,
+    "gross": 5434.0,
+    "net": 4400.0,
+    "trades": 6,
+    "note": "Nifty 0DTE. Started late (broker token bug). One −₹7,546 loss."
+   }
+  },
+  {
+   "date": "2026-10-28",
+   "instrument": "SENSEX",
+   "strategies": {
+    "orb": {
+     "net": 721.63,
+     "grade": "average",
+     "trades": 4,
+     "cum": 6203.68
+    },
+    "ema": {
+     "net": 161.6,
+     "grade": "average",
+     "trades": 2,
+     "cum": -3798.19
+    },
+    "pm": {
+     "net": -1503.77,
+     "grade": "bad",
+     "trades": 1,
+     "cum": 368.59
+    }
+   },
+   "benchmark": {
+    "day": 2,
+    "gross": 10985.25,
+    "net": 9500.0,
+    "trades": 7,
+    "note": "Sensex 1DTE. Started 11:30 (IP/token error). Big win: 73300 PE 13:23–13:25."
+   }
+  }
+ ],
+ "updated": "2026-10-28T16:25+05:30"
+}
