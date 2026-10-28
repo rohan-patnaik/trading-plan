@@ -190,7 +190,7 @@ function renderBoard(){
         body += `<td class="cell ${cls(g)}" data-date="${d.date}">${inr(b.net)}<em>${g}</em></td>`; }
       else body += `<td class="cell g-none" data-date="${d.date}">${d.date < (bm.start || COMPARE_FROM) ? "–" : "not posted"}</td>`;
     }
-    body += `<td class="total ${btot >= 0 ? "pos" : "neg"}">${Object.keys(S.days.at(-1).benchmarks).length || btot ? inr(btot) : "–"}</td></tr>`;
+    body += `<td class="total ${btot >= 0 ? "pos" : "neg"}">${S.days.some(d => d.benchmarks[bm.id]) ? inr(btot) : "–"}</td></tr>`;
   }
   body += "</tbody>";
   t.innerHTML = head + body;
