@@ -33,6 +33,31 @@
  },
  "days": [
   {
+   "date": "2026-10-21",
+   "instrument": "SENSEX",
+   "strategies": {
+    "orb": {
+     "net": -3105.03,
+     "grade": "very bad",
+     "trades": 2,
+     "cum": -3105.03
+    },
+    "ema": {
+     "net": 1282.72,
+     "grade": "good",
+     "trades": 1,
+     "cum": 1282.72
+    },
+    "pm": {
+     "net": 1013.41,
+     "grade": "good",
+     "trades": 1,
+     "cum": 1013.41
+    }
+   },
+   "benchmark": null
+  },
+  {
    "date": "2026-10-22",
    "instrument": "SENSEX",
    "strategies": {
@@ -40,19 +65,19 @@
      "net": 5402.03,
      "grade": "very good",
      "trades": 5,
-     "cum": 5402.03
+     "cum": 2297.0
     },
     "ema": {
      "net": -2403.89,
      "grade": "bad",
      "trades": 2,
-     "cum": -2403.89
+     "cum": -1121.17
     },
     "pm": {
      "net": -2584.72,
      "grade": "bad",
      "trades": 2,
-     "cum": -2584.72
+     "cum": -1571.31
     }
    },
    "benchmark": null
@@ -65,19 +90,19 @@
      "net": -355.69,
      "grade": "average",
      "trades": 2,
-     "cum": 5046.34
+     "cum": 1941.31
     },
     "ema": {
      "net": 0.0,
      "grade": "average",
      "trades": 0,
-     "cum": -2403.89
+     "cum": -1121.17
     },
     "pm": {
      "net": 2905.61,
      "grade": "good",
      "trades": 1,
-     "cum": 320.89
+     "cum": 1334.3
     }
    },
    "benchmark": null
@@ -90,19 +115,19 @@
      "net": 2910.91,
      "grade": "good",
      "trades": 1,
-     "cum": 7957.25
+     "cum": 4852.22
     },
     "ema": {
      "net": -1555.9,
      "grade": "bad",
      "trades": 1,
-     "cum": -3959.79
+     "cum": -2677.07
     },
     "pm": {
      "net": 1147.41,
      "grade": "good",
      "trades": 1,
-     "cum": 1468.3
+     "cum": 2481.71
     }
    },
    "benchmark": null
@@ -115,19 +140,19 @@
      "net": -2475.2,
      "grade": "bad",
      "trades": 2,
-     "cum": 5482.05
+     "cum": 2377.02
     },
     "ema": {
      "net": 0.0,
      "grade": "average",
      "trades": 0,
-     "cum": -3959.79
+     "cum": -2677.07
     },
     "pm": {
      "net": 404.06,
      "grade": "average",
      "trades": 1,
-     "cum": 1872.36
+     "cum": 2885.77
     }
    },
    "benchmark": {
@@ -146,19 +171,19 @@
      "net": 721.63,
      "grade": "average",
      "trades": 4,
-     "cum": 6203.68
+     "cum": 3098.65
     },
     "ema": {
      "net": 161.6,
      "grade": "average",
      "trades": 2,
-     "cum": -3798.19
+     "cum": -2515.47
     },
     "pm": {
      "net": -1503.77,
      "grade": "bad",
      "trades": 1,
-     "cum": 368.59
+     "cum": 1382.0
     }
    },
    "benchmark": {
@@ -170,5 +195,5 @@
    }
   }
  ],
- "updated": "2026-10-28T16:30+05:30"
+ "updated": "2026-10-28T16:31+05:30"
 }
