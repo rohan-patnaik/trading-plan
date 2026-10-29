@@ -240,7 +240,7 @@
      "gross": 11481.0,
      "net": 11200.0,
      "trades": 2,
-     "note": "Sensex 0DTE, 73500 CE ×240. 09:40 false breakout stopped (−₹4,327), 10:07 re-entry ran 19 min (+₹15,591). New expiry-day ORB ruleset from an overnight backtest of 108 expiries."
+     "note": "Sensex 0DTE, 73500 CE. Dhan-verified gross ₹11,481 (240 qty, avg 219.28 → 267.11). His post: 09:40 false breakout (−₹4,327), 10:07 re-entry (+₹15,591). New expiry-day ORB ruleset from a backtest of 108 expiries."
     },
     "pranjal": {
      "day": 1,
@@ -252,5 +252,5 @@
    }
   }
  ],
- "updated": "2026-10-29T17:31+05:30"
+ "updated": "2026-10-29T22:42+05:30"
 }
