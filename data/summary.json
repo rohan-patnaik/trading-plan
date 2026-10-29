@@ -38,10 +38,9 @@
   {
    "id": "pranjal",
    "name": "Pranjal",
-   "sub": "Claude, ₹2L, paper in week 1",
+   "sub": "Claude, ₹1L, real money",
    "source": "https://x.com/pranjalsoni_/status/2115423231343722789",
-   "note": "Nifty weekly option buying via Kite Connect. ₹2L capital, so divide by 2 to compare with our ₹1L. Week 1 (from 29 Oct) is paper orders on live prices; 3 versions (ORB, Supertrend, EMA) side by side. Rules: max 3 trades/day, stop at +₹15k / −₹5k, stop after 2 losses, flat by 15:10.",
-   "capital": 200000,
+   "note": "Started with a ₹2L Nifty-options plan, but on 29 Oct switched to ₹1L real money and traded intraday stocks (MIS, ~₹5L of positions with leverage), not options. Paper versions run alongside. Rules from his intro: max 3 trades/day, stop at +₹15k / −₹5k, stop after 2 losses, flat by 15:10. Net is as he reports it.",
    "start": "2026-10-29"
   }
  ],
@@ -235,8 +234,23 @@
      "cum": 2081.89
     }
    },
-   "benchmarks": {}
+   "benchmarks": {
+    "shivansh": {
+     "day": 3,
+     "gross": 11481.0,
+     "net": 11200.0,
+     "trades": 2,
+     "note": "Sensex 0DTE, 73500 CE ×240. 09:40 false breakout stopped (−₹4,327), 10:07 re-entry ran 19 min (+₹15,591). New expiry-day ORB ruleset from an overnight backtest of 108 expiries."
+    },
+    "pranjal": {
+     "day": 1,
+     "gross": 4092.9,
+     "net": 3828.0,
+     "trades": 2,
+     "note": "Intraday stocks, not options: two names (hidden) +₹3,253 and +₹845, plus an ITC test (−₹6). Trade 1 hit target (+₹3,130 net), trade 2 closed 15:10 (+₹720). Paper versions 3/3 green, +₹2.5k."
+    }
+   }
   }
  ],
- "updated": "2026-10-29T17:30+05:30"
+ "updated": "2026-10-29T17:31+05:30"
 }

@@ -17,3 +17,5 @@
 ## Open questions
 - Exchange holiday list in `engine/papertrade.py` (`HOLIDAYS`) needs checking against the NSE/BSE 2026 calendar.
 - Yahoo keeps 1-minute data for about 7 days; a missed evening must be replayed within that window.
+- Model pricing on Sensex 0DTE may run high. On 29 Oct the model priced 73400 CE at ₹308 at 09:39. Shivansh's real average buy on 73500 CE (100 points further out, two entries 09:40 and 10:07) was ₹219. Moneyness explains roughly ₹40–50 of the gap. Watch the next expiry days; if the model keeps overpricing, lower IV on expiry day (effective from the next trading day, logged here).
+- Pranjal switched on 29 Oct from a ₹2L options plan to ₹1L real money on intraday stocks. His row is no longer an options comparison; it stays on the dashboard as a loose reference.
