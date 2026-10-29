@@ -7,12 +7,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Schibsted+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.dataset.theme=localStorage.getItem("theme")||"dark"</script>
 <style>
 :root{
   --paper:#EEF2F4; --grid:#DCE3E8; --ink:#16263A; --ink-soft:#4C5D70;
   --gain:#1F7A5A; --gain-bg:#D6EBE2; --loss:#B2362F; --loss-bg:#F3DAD7;
   --rule:#D99A1E; --rule-bg:#F7E7C4; --card:#FFFFFF; --line:#C5D0D8;
+  --on-solid:#FFFFFF; --sel-soft:#C9D4DE; --bench-bg:#F6F8FA; --muted:#9AA8B4; --hair:#EDF1F4; --chart-grid:#E3E9EE;
+  --s-orb:#2F5D9A; --s-ema:#7A4FA0; --s-pm:#C0711B; --neutral:#FFFFFF;
+  color-scheme:light;
   --display:"Schibsted Grotesk",system-ui,sans-serif; --body:"Atkinson Hyperlegible",system-ui,sans-serif;
+}
+:root[data-theme="dark"]{
+  --paper:#0E1823; --grid:#172636; --ink:#E4EBF1; --ink-soft:#93A4B5;
+  --gain:#45B98A; --gain-bg:#16382C; --loss:#E26A5F; --loss-bg:#3D1F1E;
+  --rule:#E6AE48; --rule-bg:#372B14; --card:#132130; --line:#2A3C50;
+  --on-solid:#0E1823; --sel-soft:#33475C; --bench-bg:#182838; --muted:#5F7286; --hair:#1D2D3E; --chart-grid:#1F3043;
+  --s-orb:#7EA6E0; --s-ema:#B99BDE; --s-pm:#E6A057; --neutral:#132130;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{background:var(--paper);color:var(--ink)}
@@ -23,6 +35,10 @@ a{color:var(--ink)}
 :focus-visible{outline:3px solid var(--rule);outline-offset:2px}
 .wrap{max-width:1080px;margin:0 auto;padding:2rem 1.25rem 4rem}
 header h1{font:800 clamp(2rem,5vw,3.25rem)/1.05 var(--display);letter-spacing:-.02em;margin:0 0 .75rem}
+header{position:relative}
+.theme{position:absolute;top:0;right:0;font:700 .8125rem var(--display);color:var(--ink);background:var(--card);border:1.5px solid var(--ink);border-radius:999px;padding:.35rem .8rem;cursor:pointer}
+.theme:hover{background:var(--ink);color:var(--on-solid)}
+@media (max-width:560px){.theme{position:static;margin-bottom:1rem}}
 header p{max-width:62ch;margin:0 0 .5rem;color:var(--ink-soft)}
 .updated{font-size:.875rem;color:var(--ink-soft)}
 h2{font:700 1.375rem/1.2 var(--display);margin:2.75rem 0 .75rem}
@@ -34,27 +50,27 @@ table.board{border-collapse:separate;border-spacing:0;min-width:100%}
 .board th,.board td{padding:.55rem .6rem;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
 .board thead th{font:700 .8125rem/1.2 var(--display);color:var(--ink-soft);vertical-align:bottom;cursor:pointer;background:var(--card)}
 .board thead th small{display:block;font:400 .75rem var(--body);color:var(--ink-soft)}
-.board thead th.sel{background:var(--ink);color:#fff}
-.board thead th.sel small{color:#C9D4DE}
+.board thead th.sel{background:var(--ink);color:var(--on-solid)}
+.board thead th.sel small{color:var(--sel-soft)}
 .board tbody th{position:sticky;left:0;z-index:1;background:var(--card);text-align:left;font:700 .9375rem var(--display);border-right:1.5px solid var(--ink)}
 .board tbody th a{color:inherit;text-decoration-thickness:1px;text-underline-offset:2px}
 .board tbody th span{display:block;font:400 .75rem var(--body);color:var(--ink-soft)}
 .board tr.bench th,.board tr.bench td{border-top:1.5px dashed var(--ink)}
-.board tr.bench th,.board tr.bench td.g-none,.board tr.bench td.total{background:#F6F8FA}
+.board tr.bench th,.board tr.bench td.g-none,.board tr.bench td.total{background:var(--bench-bg)}
 .board td.cell{font-weight:700;cursor:pointer;min-width:5.5rem}
 .board td.cell em{display:block;font-style:normal;font-weight:400;font-size:.75rem}
-.g-very-good{background:var(--gain);color:#fff}
+.g-very-good{background:var(--gain);color:var(--on-solid)}
 .g-good{background:var(--gain-bg);color:var(--gain)}
-.g-average{background:#fff;color:var(--ink-soft)}
+.g-average{background:var(--neutral);color:var(--ink-soft)}
 .g-bad{background:var(--loss-bg);color:var(--loss)}
-.g-very-bad{background:var(--loss);color:#fff}
-.g-none{color:#9AA8B4;font-weight:400}
+.g-very-bad{background:var(--loss);color:var(--on-solid)}
+.g-none{color:var(--muted);font-weight:400}
 .board td.total{border-left:1.5px solid var(--ink);font-weight:700}
-.board .warm{color:#9AA8B4}
+.board .warm{color:var(--muted)}
 .legend{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin:.75rem 0 0;padding:0;list-style:none;font-size:.8125rem;color:var(--ink-soft)}
 .legend li::before{content:"";display:inline-block;width:.8rem;height:.8rem;border-radius:2px;margin-right:.35rem;vertical-align:-1px;border:1px solid var(--line)}
 .legend .l-vg::before{background:var(--gain)} .legend .l-g::before{background:var(--gain-bg)}
-.legend .l-a::before{background:#fff} .legend .l-b::before{background:var(--loss-bg)} .legend .l-vb::before{background:var(--loss)}
+.legend .l-a::before{background:var(--neutral)} .legend .l-b::before{background:var(--loss-bg)} .legend .l-vb::before{background:var(--loss)}
 
 .day{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.25rem}
 .day-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem;align-items:baseline}
@@ -69,7 +85,7 @@ svg.chart{width:100%;height:auto;display:block;margin:1rem 0 .25rem}
 .pill{display:inline-block;padding:.1rem .55rem;border-radius:999px;font-size:.8125rem;font-weight:700}
 .trades{width:100%;border-collapse:collapse;font-size:.875rem}
 .trades th{font:700 .75rem var(--display);color:var(--ink-soft);text-align:right;padding:.35rem .4rem;border-bottom:1px solid var(--line)}
-.trades td{text-align:right;padding:.35rem .4rem;border-bottom:1px solid #EDF1F4}
+.trades td{text-align:right;padding:.35rem .4rem;border-bottom:1px solid var(--hair)}
 .trades th:first-child,.trades td:first-child{text-align:left}
 .tscroll{overflow-x:auto}
 .pos{color:var(--gain);font-weight:700} .neg{color:var(--loss);font-weight:700}
@@ -89,6 +105,7 @@ footer{margin-top:3rem;font-size:.8125rem;color:var(--ink-soft);max-width:70ch}
 <body>
 <div class="wrap">
 <header>
+  <button class="theme" id="theme" type="button"></button>
   <h1>Paper trading log</h1>
   <p>Three rule-based option-buying strategies, each with its own ₹1L paper account, replayed every evening on that day's real 1-minute Nifty and Sensex prices. Below them are two people running similar AI experiments in public: Shivansh with real money on Fable 5.1, and Pranjal with Claude on ₹2L, paper-trading in his first week.</p>
   <p class="updated" id="updated">Loading…</p>
@@ -137,7 +154,12 @@ footer{margin-top:3rem;font-size:.8125rem;color:var(--ink-soft);max-width:70ch}
 
 <script>
 const ORDER = ["orb","ema","pm"];
-const COLORS = {orb:"#2F5D9A", ema:"#7A4FA0", pm:"#C0711B"};
+const COLORS = {orb:"var(--s-orb)", ema:"var(--s-ema)", pm:"var(--s-pm)"};
+const themeBtn = document.getElementById("theme");
+const setThemeLabel = () => themeBtn.textContent = document.documentElement.dataset.theme === "dark" ? "Light mode" : "Dark mode";
+themeBtn.onclick = () => { const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = t; localStorage.setItem("theme", t); setThemeLabel(); };
+setThemeLabel();
 const SHORT = {orb:"Opening range", ema:"EMA trend", pm:"Afternoon break"};
 const COMPARE_FROM = "2026-10-27";
 const inr = (n, sign=true) => (n == null ? "–" : (sign && n > 0 ? "+" : n < 0 ? "−" : "") + "₹" + Math.abs(Math.round(n)).toLocaleString("en-IN"));
@@ -237,16 +259,16 @@ function chart(d){
   const Y = v => P.t + (y1 - v) / (y1 - y0) * (H - P.t - P.b);
   let svg = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${d.instrument} 1-minute price with strategy entries and exits">`;
   for (let k = 0; k <= 4; k++){ const v = y0 + (y1 - y0) * k / 4;
-    svg += `<line x1="${P.l}" x2="${W - P.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="#E3E9EE"/><text class="axis" x="${P.l - 6}" y="${Y(v) + 4}" text-anchor="end">${Math.round(v).toLocaleString("en-IN")}</text>`; }
+    svg += `<line x1="${P.l}" x2="${W - P.r}" y1="${Y(v)}" y2="${Y(v)}" style="stroke:var(--chart-grid)"/><text class="axis" x="${P.l - 6}" y="${Y(v) + 4}" text-anchor="end">${Math.round(v).toLocaleString("en-IN")}</text>`; }
   for (const t of ["09:15","10:30","11:30","12:30","13:30","14:30","15:29"]) if (idx[t] != null)
     svg += `<text class="axis" x="${X(idx[t])}" y="${H - 8}" text-anchor="middle">${t === "15:29" ? "15:30" : t}</text>`;
-  svg += `<polyline fill="none" stroke="#16263A" stroke-width="1.6" points="${pts.map((p, i) => X(i).toFixed(1) + "," + Y(p.c).toFixed(1)).join(" ")}"/>`;
+  svg += `<polyline fill="none" style="stroke:var(--ink)" stroke-width="1.6" points="${pts.map((p, i) => X(i).toFixed(1) + "," + Y(p.c).toFixed(1)).join(" ")}"/>`;
   for (const s of d.strategies) for (const t of s.trades){
     const a = idx[t.entry_t], b = idx[t.exit_t], c = COLORS[s.strategy];
     if (a == null || b == null) continue;
-    svg += `<line x1="${X(a)}" y1="${Y(pts[a].c)}" x2="${X(b)}" y2="${Y(pts[b].c)}" stroke="${c}" stroke-width="2" stroke-dasharray="4 3"/>`;
-    svg += `<path d="M${X(a)} ${Y(pts[a].c) - 9} l6 10 h-12z" fill="${c}"><title>${SHORT[s.strategy]} buys ${t.strike} ${t.kind} at ${t.entry_t}</title></path>`;
-    svg += `<circle cx="${X(b)}" cy="${Y(pts[b].c)}" r="5" fill="${t.net >= 0 ? "#1F7A5A" : "#B2362F"}" stroke="${c}" stroke-width="2"><title>${t.why} at ${t.exit_t}: ${inr(t.net)}</title></circle>`;
+    svg += `<line x1="${X(a)}" y1="${Y(pts[a].c)}" x2="${X(b)}" y2="${Y(pts[b].c)}" style="stroke:${c}" stroke-width="2" stroke-dasharray="4 3"/>`;
+    svg += `<path d="M${X(a)} ${Y(pts[a].c) - 9} l6 10 h-12z" style="fill:${c}"><title>${SHORT[s.strategy]} buys ${t.strike} ${t.kind} at ${t.entry_t}</title></path>`;
+    svg += `<circle cx="${X(b)}" cy="${Y(pts[b].c)}" r="5" style="fill:${t.net >= 0 ? "var(--gain)" : "var(--loss)"};stroke:${c}" stroke-width="2"><title>${t.why} at ${t.exit_t}: ${inr(t.net)}</title></circle>`;
   }
   return el("div", {}, svg + "</svg>");
 }
