@@ -1,52 +1,52 @@
 {
- "benchmarks": [
-  {
-   "id": "shivansh",
-   "name": "Shivansh",
-   "sub": "Real money, Fable 5.1",
-   "source": "https://x.com/shivanshco/status/2115064439972249723",
-   "note": "Real trades as posted on X. Net is after charges, as the author reported it.",
-   "days": {
-    "2026-10-27": {
-     "day": 1,
-     "gross": 5434.0,
-     "net": 4400.0,
-     "trades": 6,
-     "note": "Nifty 0DTE. Started late (broker token bug). One −₹7,546 loss."
+  "benchmarks": [
+    {
+      "id": "shivansh",
+      "name": "Shivansh",
+      "sub": "Real money, Fable 5.1",
+      "source": "https://x.com/shivanshco/status/2115064439972249723",
+      "note": "Real trades as posted on X. Net is after charges, as the author reported it.",
+      "days": {
+        "2026-10-27": {
+          "day": 1,
+          "gross": 5434.0,
+          "net": 4400.0,
+          "trades": 6,
+          "note": "Nifty 0DTE. Started late (broker token bug). One −₹7,546 loss."
+        },
+        "2026-10-28": {
+          "day": 2,
+          "gross": 10985.25,
+          "net": 9500.0,
+          "trades": 7,
+          "note": "Sensex 1DTE. Started 11:30 (IP/token error). Big win: 73300 PE 13:23–13:25."
+        },
+        "2026-10-29": {
+          "day": 3,
+          "gross": 11481.0,
+          "net": 11200.0,
+          "trades": 2,
+          "note": "Sensex 0DTE, 73500 CE. Dhan-verified gross ₹11,481 (240 qty, avg 219.28 → 267.11). His post: 09:40 false breakout (−₹4,327), 10:07 re-entry (+₹15,591). New expiry-day ORB ruleset from a backtest of 108 expiries."
+        }
+      },
+      "start": "2026-10-27"
     },
-    "2026-10-28": {
-     "day": 2,
-     "gross": 10985.25,
-     "net": 9500.0,
-     "trades": 7,
-     "note": "Sensex 1DTE. Started 11:30 (IP/token error). Big win: 73300 PE 13:23–13:25."
-    },
-    "2026-10-29": {
-     "day": 3,
-     "gross": 11481.0,
-     "net": 11200.0,
-     "trades": 2,
-     "note": "Sensex 0DTE, 73500 CE ×240. 09:40 false breakout stopped (−₹4,327), 10:07 re-entry ran 19 min (+₹15,591). New expiry-day ORB ruleset from an overnight backtest of 108 expiries."
+    {
+      "id": "pranjal",
+      "name": "Pranjal",
+      "sub": "Claude, ₹1L, real money",
+      "source": "https://x.com/pranjalsoni_/status/2115423231343722789",
+      "note": "Started with a ₹2L Nifty-options plan, but on 29 Oct switched to ₹1L real money and traded intraday stocks (MIS, ~₹5L of positions with leverage), not options. Paper versions run alongside. Rules from his intro: max 3 trades/day, stop at +₹15k / −₹5k, stop after 2 losses, flat by 15:10. Net is as he reports it.",
+      "days": {
+        "2026-10-29": {
+          "day": 1,
+          "gross": 4092.9,
+          "net": 3828.0,
+          "trades": 2,
+          "note": "Intraday stocks, not options: two names (hidden) +₹3,253 and +₹845, plus an ITC test (−₹6). Trade 1 hit target (+₹3,130 net), trade 2 closed 15:10 (+₹720). Paper versions 3/3 green, +₹2.5k."
+        }
+      },
+      "start": "2026-10-29"
     }
-   },
-   "start": "2026-10-27"
-  },
-  {
-   "id": "pranjal",
-   "name": "Pranjal",
-   "sub": "Claude, ₹1L, real money",
-   "source": "https://x.com/pranjalsoni_/status/2115423231343722789",
-   "note": "Started with a ₹2L Nifty-options plan, but on 29 Oct switched to ₹1L real money and traded intraday stocks (MIS, ~₹5L of positions with leverage), not options. Paper versions run alongside. Rules from his intro: max 3 trades/day, stop at +₹15k / −₹5k, stop after 2 losses, flat by 15:10. Net is as he reports it.",
-   "days": {
-    "2026-10-29": {
-     "day": 1,
-     "gross": 4092.9,
-     "net": 3828.0,
-     "trades": 2,
-     "note": "Intraday stocks, not options: two names (hidden) +₹3,253 and +₹845, plus an ITC test (−₹6). Trade 1 hit target (+₹3,130 net), trade 2 closed 15:10 (+₹720). Paper versions 3/3 green, +₹2.5k."
-    }
-   },
-   "start": "2026-10-29"
-  }
- ]
+  ]
 }
