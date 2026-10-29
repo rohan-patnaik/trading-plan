@@ -211,7 +211,32 @@
      "note": "Sensex 1DTE. Started 11:30 (IP/token error). Big win: 73300 PE 13:23–13:25."
     }
    }
+  },
+  {
+   "date": "2026-10-29",
+   "instrument": "SENSEX",
+   "strategies": {
+    "orb": {
+     "net": 1096.74,
+     "grade": "good",
+     "trades": 1,
+     "cum": 4195.39
+    },
+    "ema": {
+     "net": 719.67,
+     "grade": "average",
+     "trades": 1,
+     "cum": -1795.8
+    },
+    "pm": {
+     "net": 699.89,
+     "grade": "average",
+     "trades": 1,
+     "cum": 2081.89
+    }
+   },
+   "benchmarks": {}
   }
  ],
- "updated": "2026-10-28T22:40+05:30"
+ "updated": "2026-10-29T17:30+05:30"
 }
