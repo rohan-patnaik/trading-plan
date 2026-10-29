@@ -19,11 +19,11 @@
   --display:"Schibsted Grotesk",system-ui,sans-serif; --body:"Atkinson Hyperlegible",system-ui,sans-serif;
 }
 :root[data-theme="dark"]{
-  --paper:#0E1823; --grid:#172636; --ink:#E4EBF1; --ink-soft:#93A4B5;
-  --gain:#45B98A; --gain-bg:#16382C; --loss:#E26A5F; --loss-bg:#3D1F1E;
-  --rule:#E6AE48; --rule-bg:#372B14; --card:#132130; --line:#2A3C50;
-  --on-solid:#0E1823; --sel-soft:#33475C; --bench-bg:#182838; --muted:#5F7286; --hair:#1D2D3E; --chart-grid:#1F3043;
-  --s-orb:#7EA6E0; --s-ema:#B99BDE; --s-pm:#E6A057; --neutral:#132130;
+  --paper:#0F0F0F; --grid:#181818; --ink:#DBDBDB; --ink-soft:#8C8C8C;
+  --gain:#22AB94; --gain-bg:#0F2B26; --loss:#F7525F; --loss-bg:#3A1A1D;
+  --rule:#E6AE48; --rule-bg:#2E2614; --card:#1A1A1A; --line:#2E2E2E;
+  --on-solid:#0F0F0F; --sel-soft:#4A4A4A; --bench-bg:#222222; --muted:#5C5C5C; --hair:#242424; --chart-grid:#262626;
+  --s-orb:#5B8DEF; --s-ema:#B388FF; --s-pm:#FF9F43; --neutral:#1A1A1A;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -212,7 +212,8 @@ function renderBoard(){
         body += `<td class="cell ${cls(g)}" data-date="${d.date}">${inr(b.net)}<em>${g}</em></td>`; }
       else body += `<td class="cell g-none" data-date="${d.date}">${d.date < (bm.start || COMPARE_FROM) ? "–" : "not posted"}</td>`;
     }
-    body += `<td class="total ${btot >= 0 ? "pos" : "neg"}">${S.days.some(d => d.benchmarks[bm.id]) ? inr(btot) : "–"}</td></tr>`;
+    const posted = S.days.some(d => d.benchmarks[bm.id]);
+    body += `<td class="total ${!posted ? "g-none" : btot >= 0 ? "pos" : "neg"}">${posted ? inr(btot) : "–"}</td></tr>`;
   }
   body += "</tbody>";
   t.innerHTML = head + body;
