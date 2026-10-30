@@ -27,6 +27,13 @@
           "net": 11200.0,
           "trades": 2,
           "note": "Sensex 0DTE, 73500 CE. Dhan-verified gross ₹11,481 (240 qty, avg 219.28 → 267.11). His post: 09:40 false breakout (−₹4,327), 10:07 re-entry (+₹15,591). New expiry-day ORB ruleset from a backtest of 108 expiries."
+        },
+        "2026-10-30": {
+          "day": 4,
+          "gross": 10393.5,
+          "net": 8500.0,
+          "trades": 13,
+          "note": "Nifty 3 Nov expiry (2DTE). Dhan-verified gross ₹10,393.50 across 5 strikes, all green (23000 CE 650 qty 129.30→136.35 biggest, +₹4,583). ~13 short 15-min breakout scalps with trailing; ~₹2k charges. No new edge found for non-expiry days."
         }
       },
       "start": "2026-10-27"
@@ -44,6 +51,13 @@
           "net": 3828.0,
           "trades": 2,
           "note": "Intraday stocks, not options: two names (hidden) +₹3,253 and +₹845, plus an ITC test (−₹6). Trade 1 hit target (+₹3,130 net), trade 2 closed 15:10 (+₹720). Paper versions 3/3 green, +₹2.5k."
+        },
+        "2026-10-30": {
+          "day": 2,
+          "gross": 685.1,
+          "net": 420.0,
+          "trades": 1,
+          "note": "Stocks: LAURUSLABS long 12:35 (Q2 profit +126%, 52-wk high, 5.6x volume, above VWAP). Paper bot picked the same stock (+₹25). IP changed mid-trade, 15:10 exit blocked; Zerodha 15:20 auto square-off closed it green. 16 order-code bugs fixed overnight; moving to fixed-IP cloud server."
         }
       },
       "start": "2026-10-29"
