@@ -250,7 +250,32 @@
      "note": "Intraday stocks, not options: two names (hidden) +₹3,253 and +₹845, plus an ITC test (−₹6). Trade 1 hit target (+₹3,130 net), trade 2 closed 15:10 (+₹720). Paper versions 3/3 green, +₹2.5k."
     }
    }
+  },
+  {
+   "date": "2026-10-30",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": -3132.91,
+     "grade": "very bad",
+     "trades": 2,
+     "cum": 1062.48
+    },
+    "ema": {
+     "net": -986.58,
+     "grade": "average",
+     "trades": 3,
+     "cum": -2782.38
+    },
+    "pm": {
+     "net": 700.56,
+     "grade": "average",
+     "trades": 1,
+     "cum": 2782.45
+    }
+   },
+   "benchmarks": {}
   }
  ],
- "updated": "2026-10-29T22:57+05:30"
+ "updated": "2026-10-30T17:30+05:30"
 }
