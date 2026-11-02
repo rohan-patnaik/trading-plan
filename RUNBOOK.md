@@ -2,7 +2,7 @@
 
 ## Daily routine (after 15:45 IST on each trading day)
 1. `python3 -I engine/papertrade.py` (today) and check every strategy produced a result.
-2. Add Shivansh's and Pranjal's days to `data/benchmark.json` if they posted (Pranjal's numbers are for ₹2L; store them as posted, the dashboard halves them for grading).
+2. Add Shivansh's and Pranjal's days to `data/benchmark.json` only after verifying the dated post. Store the reported figures unchanged. Pranjal switched to a ₹1L real-money stock account on 29 Oct; his current rows are not halved for grading. The dashboard scales grades by an explicit benchmark `capital` when supplied, otherwise it uses the ₹1L dashboard capital. Keep his stock results labelled as a loose reference to this options experiment.
 3. Review trades; write any proposed rule change below with the date it takes effect (next trading day at the earliest).
 4. Commit and push; GitHub Pages redeploys the dashboard.
 
