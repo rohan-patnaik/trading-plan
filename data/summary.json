@@ -290,7 +290,57 @@
      "note": "Stocks: LAURUSLABS long 12:35 (Q2 profit +126%, 52-wk high, 5.6x volume, above VWAP). Paper bot picked the same stock (+₹25). IP changed mid-trade, 15:10 exit blocked; Zerodha 15:20 auto square-off closed it green. 16 order-code bugs fixed overnight; moving to fixed-IP cloud server."
     }
    }
+  },
+  {
+   "date": "2026-11-02",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": -992.96,
+     "grade": "average",
+     "trades": 4,
+     "cum": 69.52
+    },
+    "ema": {
+     "net": -744.44,
+     "grade": "average",
+     "trades": 2,
+     "cum": -3526.82
+    },
+    "pm": {
+     "net": 824.17,
+     "grade": "average",
+     "trades": 1,
+     "cum": 3606.62
+    }
+   },
+   "benchmarks": {}
+  },
+  {
+   "date": "2026-11-03",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": 513.07,
+     "grade": "average",
+     "trades": 1,
+     "cum": 582.59
+    },
+    "ema": {
+     "net": -1034.84,
+     "grade": "bad",
+     "trades": 1,
+     "cum": -4561.66
+    },
+    "pm": {
+     "net": -523.8,
+     "grade": "average",
+     "trades": 2,
+     "cum": 3082.82
+    }
+   },
+   "benchmarks": {}
   }
  ],
- "updated": "2026-10-30T22:31+05:30"
+ "updated": "2026-11-03T17:31+05:30"
 }
