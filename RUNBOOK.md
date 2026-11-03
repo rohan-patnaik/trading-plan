@@ -21,3 +21,6 @@
 - Pranjal switched on 29 Oct from a ₹2L options plan to ₹1L real money on intraday stocks. His row is no longer an options comparison; it stays on the dashboard as a loose reference.
 - 30 Oct (Nifty, 2DTE): model priced 23000 CE at ₹146 (09:32, spot 22,981) and 23050 CE at ₹134 (14:45, spot 23,058); Shivansh's Dhan-verified average buys were ₹129.30 and ₹124.03 (entry times not posted). Suggests the model runs ~8–13% rich outside expiry day too, not just Sensex 0DTE. Not changing IV yet; keep collecting.
 - Stop-loss exits slip a little past the ₹1,500 risk cap (ORB on 30 Oct: −₹1,565 and −₹1,567 after slippage and charges). Within tolerance; no change.
+
+## Bug fixes
+- 2026-11-03: the scheduled replay for 2 Nov fired at 02:17 IST on 3 Nov (GitHub cron ran ~9.5 h late) and defaulted to the calendar date, asking Yahoo for a session that hadn't happened (HTTP 400). 2 Nov was never replayed. Fix: with no dates given, the engine now replays the most recent closed session (today after 15:45 IST, otherwise the previous trading day). 2 Nov replayed on 3 Nov under unchanged rules. No strategy rules changed.

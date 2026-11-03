@@ -369,6 +369,16 @@ def run_day(day):
     print(day, name, *(f"{s['strategy']}={s['net']:+,.0f}({len(s['trades'])})" for s in result["strategies"]))
 
 
+def latest_session():
+    # Most recent session that has closed. The scheduled run often fires hours late, sometimes after
+    # IST midnight; defaulting to the calendar date then asked Yahoo for a session that hadn't happened.
+    now = dt.datetime.now(IST)
+    d = now.date() if now.time() >= dt.time(15, 45) else now.date() - dt.timedelta(days=1)
+    while not is_trading_day(d):
+        d -= dt.timedelta(days=1)
+    return d
+
+
 def build_summary():
     bench = json.loads((ROOT / "data" / "benchmark.json").read_text())
     days, cum = [], {k: 0.0 for k in STRATEGIES}
@@ -387,7 +397,7 @@ def build_summary():
 
 
 if __name__ == "__main__":
-    targets = [dt.date.fromisoformat(a) for a in sys.argv[1:]] or [dt.datetime.now(IST).date()]
+    targets = [dt.date.fromisoformat(a) for a in sys.argv[1:]] or [latest_session()]
     for d in targets:
         run_day(d)
     build_summary()
