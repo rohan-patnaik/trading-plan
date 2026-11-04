@@ -24,3 +24,5 @@
 
 ## Bug fixes
 - 2026-11-03: the scheduled replay for 2 Nov fired at 02:17 IST on 3 Nov (GitHub cron ran ~9.5 h late) and defaulted to the calendar date, asking Yahoo for a session that hadn't happened (HTTP 400). 2 Nov was never replayed. Fix: with no dates given, the engine now replays the most recent closed session (today after 15:45 IST, otherwise the previous trading day). 2 Nov replayed on 3 Nov under unchanged rules. No strategy rules changed.
+- 4 Nov (Sensex, 1DTE): the model priced 77000 CE at ₹350.98 (13:00, spot 76,981) and ₹368.80 (13:08, spot 77,023). Shivansh's Dhan-verified average buy on 77000 CE was ₹365.08 (time not posted). The model was close to the real fill this time, unlike the 0DTE and 2DTE gaps above. Keep watching on Thursday's 0DTE.
+- 4 Nov: ORB took no trade (no qualifying breakout of the 09:15–09:30 range). Shivansh's loss came from trading too much (15 trades) instead. Our cap of 5 round trips looks right; no change.

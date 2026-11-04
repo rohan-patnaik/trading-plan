@@ -364,8 +364,23 @@
      "cum": 4511.38
     }
    },
-   "benchmarks": {}
+   "benchmarks": {
+    "shivansh": {
+     "day": 5,
+     "gross": -3062.0,
+     "net": -5000.0,
+     "trades": 15,
+     "note": "Sensex 5 Nov expiry (1DTE). Dhan-verified gross −₹3,062 across 7 strikes (4 green, 3 red; 76700 PE −₹6,001 and 77200 CE −₹5,307 the worst). Started ~12:00 after moving house (skipped Mon and Tue); 15 trades in ~2.5 h, stopped by the max-trades limit; trailing too tight. Says the non-expiry ruleset is turning into a pile of small, possibly overfitted rules. Plans 2× capital (₹2L) on Thursday's Sensex expiry."
+    },
+    "pranjal": {
+     "day": 3,
+     "gross": 1884.15,
+     "net": 1530.0,
+     "trades": 4,
+     "note": "Stocks, ₹1L real. Zerodha total +₹1,884.15: BEL +₹1,575, MUTHOOTFIN +₹558, one hidden +₹604, BSE −₹852 (his own pick, cut early), plus 1-share COALINDIA and ITC tests. Net not posted ('green after charges'); ₹1,530 is our estimate. Moved the bot to a fixed-IP Mumbai server. A 2-year test of entering earlier lost money, so only one small piece goes to paper. Lost Mon and Tue to setup issues."
+    }
+   }
   }
  ],
- "updated": "2026-11-04T17:30+05:30"
+ "updated": "2026-11-04T17:31+05:30"
 }
