@@ -380,7 +380,32 @@
      "note": "Stocks, ₹1L real. Zerodha total +₹1,884.15: BEL +₹1,575, MUTHOOTFIN +₹558, one hidden +₹604, BSE −₹852 (his own pick, cut early), plus 1-share COALINDIA and ITC tests. Net not posted ('green after charges'); ₹1,530 is our estimate. Moved the bot to a fixed-IP Mumbai server. A 2-year test of entering earlier lost money, so only one small piece goes to paper. Lost Mon and Tue to setup issues."
     }
    }
+  },
+  {
+   "date": "2026-11-05",
+   "instrument": "SENSEX",
+   "strategies": {
+    "orb": {
+     "net": -410.96,
+     "grade": "average",
+     "trades": 2,
+     "cum": 171.63
+    },
+    "ema": {
+     "net": -1011.09,
+     "grade": "bad",
+     "trades": 1,
+     "cum": -3752.19
+    },
+    "pm": {
+     "net": 607.97,
+     "grade": "average",
+     "trades": 1,
+     "cum": 5119.35
+    }
+   },
+   "benchmarks": {}
   }
  ],
- "updated": "2026-11-05T00:09+05:30"
+ "updated": "2026-11-05T17:30+05:30"
 }
