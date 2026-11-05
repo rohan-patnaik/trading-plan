@@ -404,7 +404,15 @@
      "cum": 5119.35
     }
    },
-   "benchmarks": {}
+   "benchmarks": {
+    "pranjal": {
+     "day": 4,
+     "gross": -3314.96,
+     "net": -3600.0,
+     "trades": 3,
+     "note": "Stocks, ₹1L real. First red day: Zerodha total −₹3,314.96 (OIL short −₹2,754, ASHOKLEY −₹681, BAJFINANCE +₹120). Logged in at 1pm and missed the bot's 9:45 short setup (+₹11k on paper size in his replay). Overrode the bot's 'skip, no-direction day' and shorted a stock already down 6%; stops held. New rules: bot self-starts at 8:50, phone alert if it's down, no trading on no-trade days."
+    }
+   }
   }
  ],
  "updated": "2026-11-05T17:30+05:30"
