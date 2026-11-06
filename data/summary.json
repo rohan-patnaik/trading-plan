@@ -413,7 +413,32 @@
      "note": "Author post (verified): '−3.6k on the day', gross/net basis not stated; net −3600 is that rounded figure. Gross −3,314.96 and per-stock split are screenshot-derived, not independently verified. Stocks, ₹1L real. First red day: Zerodha total −₹3,314.96 (OIL short −₹2,754, ASHOKLEY −₹681, BAJFINANCE +₹120). Logged in at 1pm and missed the bot's 9:45 short setup (+₹11k on paper size in his replay). Overrode the bot's 'skip, no-direction day' and shorted a stock already down 6%; stops held. New rules: bot self-starts at 8:50, phone alert if it's down, no trading on no-trade days."
     }
    }
+  },
+  {
+   "date": "2026-11-06",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": 2903.48,
+     "grade": "good",
+     "trades": 1,
+     "cum": 3075.11
+    },
+    "ema": {
+     "net": 1077.34,
+     "grade": "good",
+     "trades": 1,
+     "cum": -2674.85
+    },
+    "pm": {
+     "net": -1551.9,
+     "grade": "bad",
+     "trades": 1,
+     "cum": 3567.45
+    }
+   },
+   "benchmarks": {}
   }
  ],
- "updated": "2026-11-06T00:16+05:30"
+ "updated": "2026-11-06T23:28+05:30"
 }
