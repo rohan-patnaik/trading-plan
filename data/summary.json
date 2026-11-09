@@ -443,7 +443,7 @@
      "gross": null,
      "net": -3700.0,
      "trades": 1,
-     "note": "Stocks, ₹1L real. Second red day: one full-size short on a news gap-down (a setup that held up in his 2-year test) was stopped out in 13 min, −₹3.7k; no screenshot or gross posted. A holiday-calendar bug switched paper trading off at 9:16. A 1–3 min scalping idea showed zero edge in 20k backtested trades; run on paper anyway at ₹5L a trade: 72 trades, −₹30k. Account down ~1.6% over 5 days. Weekend plan: test the setup on 5 more years and hard-code the risk rules so he can't override them."
+     "note": "Author Day 5 recap verified (https://x.com/pranjalsoni_/status/2118693175116325259): rounded loss −₹3.7k; gross/net basis unstated, stored net −3700 follows that rounded figure. One described real trade, not an independently checked broker trade count. Stocks, ₹1L real. Second red day: one full-size short on a news gap-down (a setup that held up in his 2-year test) was stopped out in 13 min, −₹3.7k; no screenshot or gross posted. A holiday-calendar bug switched paper trading off at 9:16. A 1–3 min scalping idea showed zero edge in 20k backtested trades; run on paper anyway at ₹5L a trade: 72 trades, −₹30k. Account down ~1.6% over 5 days. Weekend plan: test the setup on 5 more years and hard-code the risk rules so he can't override them."
     }
    }
   },
