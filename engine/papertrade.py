@@ -132,7 +132,7 @@ def bs_price(kind, s, k, t_years, iv):
 
 
 def charges(name, buy_val, sell_val):
-    brk = min(20, 0.0003 * buy_val) + min(20, 0.0003 * sell_val)
+    brk = 20 + 20  # Zerodha options brokerage is a flat ₹20 per executed order (the 0.03% cap applies to futures/equity)
     exch = (buy_val + sell_val) * INSTRUMENTS[name]["exch"]
     sebi = (buy_val + sell_val) * 1e-6
     gst = 0.18 * (brk + exch + sebi)

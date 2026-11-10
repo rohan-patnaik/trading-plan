@@ -1,7 +1,7 @@
 {
  "date": "2026-10-28",
  "instrument": "SENSEX",
- "generated_at": "2026-10-28T22:40+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,8 +1528,8 @@
      "exit": 487.3,
      "why": "trailing stop",
      "gross": 1178.2,
-     "charges": 28.4,
-     "net": 1149.8
+     "charges": 69.12,
+     "net": 1109.08
     },
     {
      "kind": "CE",
@@ -1546,8 +1546,8 @@
      "exit": 438.15,
      "why": "trailing stop",
      "gross": 1283.6,
-     "charges": 25.37,
-     "net": 1258.23
+     "charges": 66.82,
+     "net": 1216.78
     },
     {
      "kind": "CE",
@@ -1564,8 +1564,8 @@
      "exit": 276.85,
      "why": "stop-loss",
      "gross": -1419.0,
-     "charges": 17.74,
-     "net": -1436.74
+     "charges": 60.52,
+     "net": -1479.52
     },
     {
      "kind": "CE",
@@ -1582,15 +1582,15 @@
      "exit": 300.66,
      "why": "time exit",
      "gross": -231.4,
-     "charges": 18.26,
-     "net": -249.66
+     "charges": 61.12,
+     "net": -292.52
     }
    ],
    "events": [],
    "orders": 8,
    "gross": 811.4,
-   "charges": 89.77,
-   "net": 721.63,
+   "charges": 257.58,
+   "net": 553.82,
    "grade": "average"
   },
   {
@@ -1616,8 +1616,8 @@
      "exit": 487.3,
      "why": "trailing stop",
      "gross": 1505.6,
-     "charges": 28.15,
-     "net": 1477.45
+     "charges": 68.99,
+     "net": 1436.61
     },
     {
      "kind": "PE",
@@ -1634,15 +1634,15 @@
      "exit": 253.54,
      "why": "stop-loss",
      "gross": -1299.6,
-     "charges": 16.25,
-     "net": -1315.85
+     "charges": 59.4,
+     "net": -1359.0
     }
    ],
    "events": [],
    "orders": 4,
    "gross": 206.0,
-   "charges": 44.4,
-   "net": 161.6,
+   "charges": 128.39,
+   "net": 77.61,
    "grade": "average"
   },
   {
@@ -1668,15 +1668,15 @@
      "exit": 289.75,
      "why": "stop-loss",
      "gross": -1485.2,
-     "charges": 18.57,
-     "net": -1503.77
+     "charges": 61.14,
+     "net": -1546.34
     }
    ],
    "events": [],
    "orders": 2,
    "gross": -1485.2,
-   "charges": 18.57,
-   "net": -1503.77,
+   "charges": 61.14,
+   "net": -1546.34,
    "grade": "bad"
   }
  ]

@@ -1,7 +1,7 @@
 {
  "date": "2026-10-21",
  "instrument": "SENSEX",
- "generated_at": "2026-10-28T16:31+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,8 +1528,8 @@
      "exit": 311.28,
      "why": "stop-loss",
      "gross": -1531.2,
-     "charges": 19.9,
-     "net": -1551.1
+     "charges": 62.15,
+     "net": -1593.35
     },
     {
      "kind": "PE",
@@ -1546,20 +1546,20 @@
      "exit": 328.37,
      "why": "stop-loss",
      "gross": -1533.0,
-     "charges": 20.93,
-     "net": -1553.93
+     "charges": 62.94,
+     "net": -1595.94
     }
    ],
    "events": [
     {
      "t": "10:34",
-     "rule": "Daily loss stop hit (₹-3,105)"
+     "rule": "Daily loss stop hit (₹-3,189)"
     }
    ],
    "orders": 4,
    "gross": -3064.2,
-   "charges": 40.83,
-   "net": -3105.03,
+   "charges": 125.09,
+   "net": -3189.29,
    "grade": "very bad"
   },
   {
@@ -1585,15 +1585,15 @@
      "exit": 463.61,
      "why": "trailing stop",
      "gross": 1309.6,
-     "charges": 26.88,
-     "net": 1282.72
+     "charges": 67.98,
+     "net": 1241.62
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 1309.6,
-   "charges": 26.88,
-   "net": 1282.72,
+   "charges": 67.98,
+   "net": 1241.62,
    "grade": "good"
   },
   {
@@ -1619,16 +1619,16 @@
      "exit": 415.47,
      "why": "trailing stop",
      "gross": 1037.6,
-     "charges": 24.19,
-     "net": 1013.41
+     "charges": 65.88,
+     "net": 971.72
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 1037.6,
-   "charges": 24.19,
-   "net": 1013.41,
-   "grade": "good"
+   "charges": 65.88,
+   "net": 971.72,
+   "grade": "average"
   }
  ]
 }

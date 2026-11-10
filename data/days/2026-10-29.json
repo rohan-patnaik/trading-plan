@@ -1,7 +1,7 @@
 {
  "date": "2026-10-29",
  "instrument": "SENSEX",
- "generated_at": "2026-10-29T22:57+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,15 +1528,15 @@
      "exit": 364.37,
      "why": "trailing stop",
      "gross": 1117.8,
-     "charges": 21.06,
-     "net": 1096.74
+     "charges": 63.49,
+     "net": 1054.31
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 1117.8,
-   "charges": 21.06,
-   "net": 1096.74,
+   "charges": 63.49,
+   "net": 1054.31,
    "grade": "good"
   },
   {
@@ -1562,15 +1562,15 @@
      "exit": 200.35,
      "why": "trailing stop",
      "gross": 743.2,
-     "charges": 23.53,
-     "net": 719.67
+     "charges": 65.32,
+     "net": 677.88
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 743.2,
-   "charges": 23.53,
-   "net": 719.67,
+   "charges": 65.32,
+   "net": 677.88,
    "grade": "average"
   },
   {
@@ -1596,15 +1596,15 @@
      "exit": 227.06,
      "why": "trailing stop",
      "gross": 713.0,
-     "charges": 13.11,
-     "net": 699.89
+     "charges": 57.35,
+     "net": 655.65
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 713.0,
-   "charges": 13.11,
-   "net": 699.89,
+   "charges": 57.35,
+   "net": 655.65,
    "grade": "average"
   }
  ]

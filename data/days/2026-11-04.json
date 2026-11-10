@@ -1,7 +1,7 @@
 {
  "date": "2026-11-04",
  "instrument": "SENSEX",
- "generated_at": "2026-11-05T00:09+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1543,15 +1543,15 @@
      "exit": 443.27,
      "why": "trailing stop",
      "gross": 1845.8,
-     "charges": 25.24,
-     "net": 1820.56
+     "charges": 66.82,
+     "net": 1778.98
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 1845.8,
-   "charges": 25.24,
-   "net": 1820.56,
+   "charges": 66.82,
+   "net": 1778.98,
    "grade": "good"
   },
   {
@@ -1577,15 +1577,15 @@
      "exit": 441.5,
      "why": "trailing stop",
      "gross": 1454.0,
-     "charges": 25.44,
-     "net": 1428.56
+     "charges": 66.9,
+     "net": 1387.1
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 1454.0,
-   "charges": 25.44,
-   "net": 1428.56,
+   "charges": 66.9,
+   "net": 1387.1,
    "grade": "good"
   }
  ]

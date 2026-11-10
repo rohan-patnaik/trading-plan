@@ -1,7 +1,7 @@
 {
  "date": "2026-11-09",
  "instrument": "NIFTY",
- "generated_at": "2026-11-10T02:57+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,8 +1528,8 @@
      "exit": 92.59,
      "why": "stop-loss",
      "gross": -1530.1,
-     "charges": 19.68,
-     "net": -1549.78
+     "charges": 62.08,
+     "net": -1592.18
     },
     {
      "kind": "PE",
@@ -1546,8 +1546,8 @@
      "exit": 116.57,
      "why": "trailing stop",
      "gross": 700.05,
-     "charges": 22.68,
-     "net": 677.37
+     "charges": 64.76,
+     "net": 635.29
     },
     {
      "kind": "PE",
@@ -1564,8 +1564,8 @@
      "exit": 105.71,
      "why": "trailing stop",
      "gross": 651.95,
-     "charges": 20.55,
-     "net": 631.4
+     "charges": 63.12,
+     "net": 588.83
     },
     {
      "kind": "PE",
@@ -1582,8 +1582,8 @@
      "exit": 73.1,
      "why": "stop-loss",
      "gross": -1217.45,
-     "charges": 15.55,
-     "net": -1233.0
+     "charges": 58.95,
+     "net": -1276.4
     },
     {
      "kind": "PE",
@@ -1600,8 +1600,8 @@
      "exit": 61.94,
      "why": "stop-loss",
      "gross": -1031.55,
-     "charges": 13.17,
-     "net": -1044.72
+     "charges": 57.16,
+     "net": -1088.71
     }
    ],
    "events": [
@@ -1612,8 +1612,8 @@
    ],
    "orders": 10,
    "gross": -2427.1,
-   "charges": 91.63,
-   "net": -2518.73,
+   "charges": 306.07,
+   "net": -2733.17,
    "grade": "bad"
   },
   {
@@ -1639,8 +1639,8 @@
      "exit": 111.18,
      "why": "trailing stop",
      "gross": 1080.3,
-     "charges": 21.3,
-     "net": 1059.0
+     "charges": 63.77,
+     "net": 1016.53
     },
     {
      "kind": "PE",
@@ -1657,15 +1657,15 @@
      "exit": 59.02,
      "why": "stop-loss",
      "gross": -982.8,
-     "charges": 12.55,
-     "net": -995.35
+     "charges": 56.69,
+     "net": -1039.49
     }
    ],
    "events": [],
    "orders": 4,
    "gross": 97.5,
-   "charges": 33.85,
-   "net": 63.65,
+   "charges": 120.46,
+   "net": -22.96,
    "grade": "average"
   },
   {
@@ -1691,8 +1691,8 @@
      "exit": 71.63,
      "why": "trailing stop",
      "gross": 510.25,
-     "charges": 13.87,
-     "net": 496.38
+     "charges": 57.96,
+     "net": 452.29
     },
     {
      "kind": "CE",
@@ -1709,8 +1709,8 @@
      "exit": 69.03,
      "why": "trailing stop",
      "gross": 493.35,
-     "charges": 13.37,
-     "net": 479.98
+     "charges": 57.57,
+     "net": 435.78
     },
     {
      "kind": "PE",
@@ -1727,8 +1727,8 @@
      "exit": 44.03,
      "why": "stop-loss",
      "gross": -1466.4,
-     "charges": 18.73,
-     "net": -1485.13
+     "charges": 61.35,
+     "net": -1527.75
     },
     {
      "kind": "CE",
@@ -1745,15 +1745,15 @@
      "exit": 70.07,
      "why": "target",
      "gross": 2570.1,
-     "charges": 25.89,
-     "net": 2544.21
+     "charges": 67.55,
+     "net": 2502.55
     }
    ],
    "events": [],
    "orders": 8,
    "gross": 2107.3,
-   "charges": 71.86,
-   "net": 2035.44,
+   "charges": 244.43,
+   "net": 1862.87,
    "grade": "good"
   }
  ]

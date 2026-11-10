@@ -1,7 +1,7 @@
 {
  "date": "2026-10-30",
  "instrument": "NIFTY",
- "generated_at": "2026-10-30T22:31+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,8 +1528,8 @@
      "exit": 122.38,
      "why": "stop-loss",
      "gross": -1539.85,
-     "charges": 25.63,
-     "net": -1565.48
+     "charges": 66.65,
+     "net": -1606.5
     },
     {
      "kind": "PE",
@@ -1546,20 +1546,20 @@
      "exit": 125.66,
      "why": "stop-loss",
      "gross": -1541.15,
-     "charges": 26.28,
-     "net": -1567.43
+     "charges": 67.15,
+     "net": -1608.3
     }
    ],
    "events": [
     {
      "t": "10:42",
-     "rule": "Daily loss stop hit (₹-3,133)"
+     "rule": "Daily loss stop hit (₹-3,215)"
     }
    ],
    "orders": 4,
    "gross": -3081.0,
-   "charges": 51.91,
-   "net": -3132.91,
+   "charges": 133.8,
+   "net": -3214.8,
    "grade": "very bad"
   },
   {
@@ -1585,8 +1585,8 @@
      "exit": 141.44,
      "why": "stop-loss",
      "gross": -1546.35,
-     "charges": 29.43,
-     "net": -1575.78
+     "charges": 69.58,
+     "net": -1615.93
     },
     {
      "kind": "CE",
@@ -1603,8 +1603,8 @@
      "exit": 183.39,
      "why": "trailing stop",
      "gross": 1517.75,
-     "charges": 35.35,
-     "net": 1482.4
+     "charges": 74.65,
+     "net": 1443.1
     },
     {
      "kind": "CE",
@@ -1621,16 +1621,16 @@
      "exit": 120.91,
      "why": "time exit",
      "gross": -868.4,
-     "charges": 24.8,
-     "net": -893.2
+     "charges": 66.13,
+     "net": -934.53
     }
    ],
    "events": [],
    "orders": 6,
    "gross": -897.0,
-   "charges": 89.58,
-   "net": -986.58,
-   "grade": "average"
+   "charges": 210.36,
+   "net": -1107.36,
+   "grade": "bad"
   },
   {
    "strategy": "pm",
@@ -1655,15 +1655,15 @@
      "exit": 137.31,
      "why": "trailing stop",
      "gross": 727.35,
-     "charges": 26.79,
-     "net": 700.56
+     "charges": 67.93,
+     "net": 659.42
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 727.35,
-   "charges": 26.79,
-   "net": 700.56,
+   "charges": 67.93,
+   "net": 659.42,
    "grade": "average"
   }
  ]

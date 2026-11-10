@@ -1,7 +1,7 @@
 {
  "date": "2026-10-23",
  "instrument": "NIFTY",
- "generated_at": "2026-10-28T16:25+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,8 +1528,8 @@
      "exit": 145.9,
      "why": "stop-loss",
      "gross": -1547.65,
-     "charges": 30.32,
-     "net": -1577.97
+     "charges": 70.26,
+     "net": -1617.91
     },
     {
      "kind": "PE",
@@ -1546,15 +1546,15 @@
      "exit": 186.23,
      "why": "trailing stop",
      "gross": 1258.4,
-     "charges": 36.12,
-     "net": 1222.28
+     "charges": 75.2,
+     "net": 1183.2
     }
    ],
    "events": [],
    "orders": 4,
    "gross": -289.25,
-   "charges": 66.44,
-   "net": -355.69,
+   "charges": 145.46,
+   "net": -434.71,
    "grade": "average"
   },
   {
@@ -1595,15 +1595,15 @@
      "exit": 184.02,
      "why": "target",
      "gross": 2939.95,
-     "charges": 34.34,
-     "net": 2905.61
+     "charges": 74.11,
+     "net": 2865.84
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 2939.95,
-   "charges": 34.34,
-   "net": 2905.61,
+   "charges": 74.11,
+   "net": 2865.84,
    "grade": "good"
   }
  ]

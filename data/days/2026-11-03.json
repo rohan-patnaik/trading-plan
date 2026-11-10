@@ -1,7 +1,7 @@
 {
  "date": "2026-11-03",
  "instrument": "NIFTY",
- "generated_at": "2026-11-03T23:57+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,15 +1528,15 @@
      "exit": 89.07,
      "why": "trailing stop",
      "gross": 530.4,
-     "charges": 17.33,
-     "net": 513.07
+     "charges": 60.62,
+     "net": 469.78
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 530.4,
-   "charges": 17.33,
-   "net": 513.07,
+   "charges": 60.62,
+   "net": 469.78,
    "grade": "average"
   },
   {
@@ -1562,15 +1562,15 @@
      "exit": 30.65,
      "why": "stop-loss",
      "gross": -1021.8,
-     "charges": 13.04,
-     "net": -1034.84
+     "charges": 57.05,
+     "net": -1078.85
     }
    ],
    "events": [],
    "orders": 2,
    "gross": -1021.8,
-   "charges": 13.04,
-   "net": -1034.84,
+   "charges": 57.05,
+   "net": -1078.85,
    "grade": "bad"
   },
   {
@@ -1596,8 +1596,8 @@
      "exit": 67.81,
      "why": "trailing stop",
      "gross": 613.6,
-     "charges": 13.03,
-     "net": 600.57
+     "charges": 57.33,
+     "net": 556.27
     },
     {
      "kind": "CE",
@@ -1614,15 +1614,15 @@
      "exit": 33.32,
      "why": "stop-loss",
      "gross": -1110.2,
-     "charges": 14.17,
-     "net": -1124.37
+     "charges": 57.91,
+     "net": -1168.11
     }
    ],
    "events": [],
    "orders": 4,
    "gross": -496.6,
-   "charges": 27.2,
-   "net": -523.8,
+   "charges": 115.24,
+   "net": -611.84,
    "grade": "average"
   }
  ]

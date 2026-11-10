@@ -50,22 +50,22 @@
    "instrument": "SENSEX",
    "strategies": {
     "orb": {
-     "net": -3105.03,
+     "net": -3189.29,
      "grade": "very bad",
      "trades": 2,
-     "cum": -3105.03
+     "cum": -3189.29
     },
     "ema": {
-     "net": 1282.72,
+     "net": 1241.62,
      "grade": "good",
      "trades": 1,
-     "cum": 1282.72
+     "cum": 1241.62
     },
     "pm": {
-     "net": 1013.41,
-     "grade": "good",
+     "net": 971.72,
+     "grade": "average",
      "trades": 1,
-     "cum": 1013.41
+     "cum": 971.72
     }
    },
    "benchmarks": {}
@@ -75,22 +75,22 @@
    "instrument": "SENSEX",
    "strategies": {
     "orb": {
-     "net": 5402.03,
+     "net": 5189.98,
      "grade": "very good",
      "trades": 5,
-     "cum": 2297.0
+     "cum": 2000.69
     },
     "ema": {
-     "net": -2403.89,
+     "net": -2490.88,
      "grade": "bad",
      "trades": 2,
-     "cum": -1121.17
+     "cum": -1249.26
     },
     "pm": {
-     "net": -2584.72,
+     "net": -2671.16,
      "grade": "bad",
      "trades": 2,
-     "cum": -1571.31
+     "cum": -1699.44
     }
    },
    "benchmarks": {}
@@ -100,22 +100,22 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": -355.69,
+     "net": -434.71,
      "grade": "average",
      "trades": 2,
-     "cum": 1941.31
+     "cum": 1565.98
     },
     "ema": {
      "net": 0.0,
      "grade": "average",
      "trades": 0,
-     "cum": -1121.17
+     "cum": -1249.26
     },
     "pm": {
-     "net": 2905.61,
+     "net": 2865.84,
      "grade": "good",
      "trades": 1,
-     "cum": 1334.3
+     "cum": 1166.4
     }
    },
    "benchmarks": {}
@@ -125,22 +125,22 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": 2910.91,
+     "net": 2870.66,
      "grade": "good",
      "trades": 1,
-     "cum": 4852.22
+     "cum": 4436.64
     },
     "ema": {
-     "net": -1555.9,
+     "net": -1597.79,
      "grade": "bad",
      "trades": 1,
-     "cum": -2677.07
+     "cum": -2847.05
     },
     "pm": {
-     "net": 1147.41,
+     "net": 1105.98,
      "grade": "good",
      "trades": 1,
-     "cum": 2481.71
+     "cum": 2272.38
     }
    },
    "benchmarks": {}
@@ -150,22 +150,22 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": -2475.2,
+     "net": -2561.98,
      "grade": "bad",
      "trades": 2,
-     "cum": 2377.02
+     "cum": 1874.66
     },
     "ema": {
      "net": 0.0,
      "grade": "average",
      "trades": 0,
-     "cum": -2677.07
+     "cum": -2847.05
     },
     "pm": {
-     "net": 404.06,
+     "net": 359.7,
      "grade": "average",
      "trades": 1,
-     "cum": 2885.77
+     "cum": 2632.08
     }
    },
    "benchmarks": {
@@ -183,22 +183,22 @@
    "instrument": "SENSEX",
    "strategies": {
     "orb": {
-     "net": 721.63,
+     "net": 553.82,
      "grade": "average",
      "trades": 4,
-     "cum": 3098.65
+     "cum": 2428.48
     },
     "ema": {
-     "net": 161.6,
+     "net": 77.61,
      "grade": "average",
      "trades": 2,
-     "cum": -2515.47
+     "cum": -2769.44
     },
     "pm": {
-     "net": -1503.77,
+     "net": -1546.34,
      "grade": "bad",
      "trades": 1,
-     "cum": 1382.0
+     "cum": 1085.74
     }
    },
    "benchmarks": {
@@ -216,22 +216,22 @@
    "instrument": "SENSEX",
    "strategies": {
     "orb": {
-     "net": 1096.74,
+     "net": 1054.31,
      "grade": "good",
      "trades": 1,
-     "cum": 4195.39
+     "cum": 3482.79
     },
     "ema": {
-     "net": 719.67,
+     "net": 677.88,
      "grade": "average",
      "trades": 1,
-     "cum": -1795.8
+     "cum": -2091.56
     },
     "pm": {
-     "net": 699.89,
+     "net": 655.65,
      "grade": "average",
      "trades": 1,
-     "cum": 2081.89
+     "cum": 1741.39
     }
    },
    "benchmarks": {
@@ -256,22 +256,22 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": -3132.91,
+     "net": -3214.8,
      "grade": "very bad",
      "trades": 2,
-     "cum": 1062.48
+     "cum": 267.99
     },
     "ema": {
-     "net": -986.58,
-     "grade": "average",
+     "net": -1107.36,
+     "grade": "bad",
      "trades": 3,
-     "cum": -2782.38
+     "cum": -3198.92
     },
     "pm": {
-     "net": 700.56,
+     "net": 659.42,
      "grade": "average",
      "trades": 1,
-     "cum": 2782.45
+     "cum": 2400.81
     }
    },
    "benchmarks": {
@@ -296,22 +296,22 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": -992.96,
-     "grade": "average",
+     "net": -1161.24,
+     "grade": "bad",
      "trades": 4,
-     "cum": 69.52
+     "cum": -893.25
     },
     "ema": {
-     "net": -744.44,
+     "net": -829.83,
      "grade": "average",
      "trades": 2,
-     "cum": -3526.82
+     "cum": -4028.75
     },
     "pm": {
-     "net": 824.17,
+     "net": 781.94,
      "grade": "average",
      "trades": 1,
-     "cum": 3606.62
+     "cum": 3182.75
     }
    },
    "benchmarks": {}
@@ -321,22 +321,22 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": 513.07,
+     "net": 469.78,
      "grade": "average",
      "trades": 1,
-     "cum": 582.59
+     "cum": -423.47
     },
     "ema": {
-     "net": -1034.84,
+     "net": -1078.85,
      "grade": "bad",
      "trades": 1,
-     "cum": -4561.66
+     "cum": -5107.6
     },
     "pm": {
-     "net": -523.8,
+     "net": -611.84,
      "grade": "average",
      "trades": 2,
-     "cum": 3082.82
+     "cum": 2570.91
     }
    },
    "benchmarks": {}
@@ -349,19 +349,19 @@
      "net": 0.0,
      "grade": "average",
      "trades": 0,
-     "cum": 582.59
+     "cum": -423.47
     },
     "ema": {
-     "net": 1820.56,
+     "net": 1778.98,
      "grade": "good",
      "trades": 1,
-     "cum": -2741.1
+     "cum": -3328.62
     },
     "pm": {
-     "net": 1428.56,
+     "net": 1387.1,
      "grade": "good",
      "trades": 1,
-     "cum": 4511.38
+     "cum": 3958.01
     }
    },
    "benchmarks": {
@@ -386,22 +386,22 @@
    "instrument": "SENSEX",
    "strategies": {
     "orb": {
-     "net": -410.96,
+     "net": -498.1,
      "grade": "average",
      "trades": 2,
-     "cum": 171.63
+     "cum": -921.57
     },
     "ema": {
-     "net": -1011.09,
+     "net": -1055.17,
      "grade": "bad",
      "trades": 1,
-     "cum": -3752.19
+     "cum": -4383.79
     },
     "pm": {
-     "net": 607.97,
+     "net": 564.06,
      "grade": "average",
      "trades": 1,
-     "cum": 5119.35
+     "cum": 4522.07
     }
    },
    "benchmarks": {
@@ -419,22 +419,22 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": 2903.48,
+     "net": 2863.9,
      "grade": "good",
      "trades": 1,
-     "cum": 3075.11
+     "cum": 1942.33
     },
     "ema": {
-     "net": 1077.34,
+     "net": 1036.79,
      "grade": "good",
      "trades": 1,
-     "cum": -2674.85
+     "cum": -3347.0
     },
     "pm": {
-     "net": -1551.9,
+     "net": -1594.11,
      "grade": "bad",
      "trades": 1,
-     "cum": 3567.45
+     "cum": 2927.96
     }
    },
    "benchmarks": {
@@ -452,26 +452,26 @@
    "instrument": "NIFTY",
    "strategies": {
     "orb": {
-     "net": -2518.73,
+     "net": -2733.17,
      "grade": "bad",
      "trades": 5,
-     "cum": 556.38
+     "cum": -790.84
     },
     "ema": {
-     "net": 63.65,
+     "net": -22.96,
      "grade": "average",
      "trades": 2,
-     "cum": -2611.2
+     "cum": -3369.96
     },
     "pm": {
-     "net": 2035.44,
+     "net": 1862.87,
      "grade": "good",
      "trades": 4,
-     "cum": 5602.89
+     "cum": 4790.83
     }
    },
    "benchmarks": {}
   }
  ],
- "updated": "2026-11-10T02:57+05:30"
+ "updated": "2026-11-10T10:24+05:30"
 }

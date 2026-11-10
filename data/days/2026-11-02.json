@@ -1,7 +1,7 @@
 {
  "date": "2026-11-02",
  "instrument": "NIFTY",
- "generated_at": "2026-11-03T17:31+05:30",
+ "generated_at": "2026-11-10T10:24+05:30",
  "spot": [
   {
    "t": "09:15",
@@ -1528,8 +1528,8 @@
      "exit": 141.16,
      "why": "trailing stop",
      "gross": 1015.95,
-     "charges": 27.33,
-     "net": 988.62
+     "charges": 68.39,
+     "net": 947.56
     },
     {
      "kind": "CE",
@@ -1546,8 +1546,8 @@
      "exit": 129.07,
      "why": "trailing stop",
      "gross": 883.35,
-     "charges": 25.03,
-     "net": 858.32
+     "charges": 66.6,
+     "net": 816.75
     },
     {
      "kind": "CE",
@@ -1564,8 +1564,8 @@
      "exit": 89.24,
      "why": "stop-loss",
      "gross": -1486.55,
-     "charges": 18.98,
-     "net": -1505.53
+     "charges": 61.54,
+     "net": -1548.09
     },
     {
      "kind": "PE",
@@ -1582,8 +1582,8 @@
      "exit": 79.07,
      "why": "stop-loss",
      "gross": -1317.55,
-     "charges": 16.82,
-     "net": -1334.37
+     "charges": 59.91,
+     "net": -1377.46
     }
    ],
    "events": [
@@ -1594,9 +1594,9 @@
    ],
    "orders": 8,
    "gross": -904.8,
-   "charges": 88.16,
-   "net": -992.96,
-   "grade": "average"
+   "charges": 256.44,
+   "net": -1161.24,
+   "grade": "bad"
   },
   {
    "strategy": "ema",
@@ -1621,8 +1621,8 @@
      "exit": 85.45,
      "why": "stop-loss",
      "gross": -1423.5,
-     "charges": 18.17,
-     "net": -1441.67
+     "charges": 60.94,
+     "net": -1484.44
     },
     {
      "kind": "CE",
@@ -1639,15 +1639,15 @@
      "exit": 105.04,
      "why": "time exit",
      "gross": 717.6,
-     "charges": 20.37,
-     "net": 697.23
+     "charges": 62.99,
+     "net": 654.61
     }
    ],
    "events": [],
    "orders": 4,
    "gross": -705.9,
-   "charges": 38.54,
-   "net": -744.44,
+   "charges": 123.93,
+   "net": -829.83,
    "grade": "average"
   },
   {
@@ -1673,15 +1673,15 @@
      "exit": 114.39,
      "why": "trailing stop",
      "gross": 846.3,
-     "charges": 22.13,
-     "net": 824.17
+     "charges": 64.36,
+     "net": 781.94
     }
    ],
    "events": [],
    "orders": 2,
    "gross": 846.3,
-   "charges": 22.13,
-   "net": 824.17,
+   "charges": 64.36,
+   "net": 781.94,
    "grade": "average"
   }
  ]
