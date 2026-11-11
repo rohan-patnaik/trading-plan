@@ -1,8 +1,7 @@
 {
  "date": "2026-11-11",
  "instrument": "SENSEX",
- "source_label": "Opus isolated replay from retained Yahoo snapshots; published by Linux parent, not the GitHub scheduled run",
- "generated_at": "2026-11-11T17:36+05:30",
+ "generated_at": "2026-11-12T00:12+05:30",
  "spot": [
   {
    "t": "09:15",
