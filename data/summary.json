@@ -521,7 +521,32 @@
     }
    },
    "benchmarks": {}
+  },
+  {
+   "date": "2026-11-13",
+   "instrument": "NIFTY",
+   "strategies": {
+    "orb": {
+     "net": -3238.76,
+     "grade": "very bad",
+     "trades": 2,
+     "cum": -10156.68
+    },
+    "ema": {
+     "net": 1785.48,
+     "grade": "good",
+     "trades": 1,
+     "cum": -7613.51
+    },
+    "pm": {
+     "net": -3218.9,
+     "grade": "very bad",
+     "trades": 2,
+     "cum": 402.08
+    }
+   },
+   "benchmarks": {}
   }
  ],
- "updated": "2026-11-13T00:27+05:30"
+ "updated": "2026-11-14T00:01+05:30"
 }
