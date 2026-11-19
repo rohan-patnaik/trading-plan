@@ -621,7 +621,32 @@
     }
    },
    "benchmarks": {}
+  },
+  {
+   "date": "2026-11-19",
+   "instrument": "SENSEX",
+   "strategies": {
+    "orb": {
+     "net": -2722.04,
+     "grade": "bad",
+     "trades": 2,
+     "cum": -10639.89
+    },
+    "ema": {
+     "net": 792.29,
+     "grade": "average",
+     "trades": 1,
+     "cum": -6993.48
+    },
+    "pm": {
+     "net": 360.1,
+     "grade": "average",
+     "trades": 2,
+     "cum": 1365.63
+    }
+   },
+   "benchmarks": {}
   }
  ],
- "updated": "2026-11-19T00:54+05:30"
+ "updated": "2026-11-20T00:59+05:30"
 }
